@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Don Richardson Bayya - Data Professional Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .header .subtitle {
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .skills-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .skill-tag {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            color: #333;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 5px solid #667eea;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .project-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .project-card p {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .tech-badge {
+            background: #f0f8ff;
+            color: #667eea;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid #e0e8f0;
+        }
+        
+        .project-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: transform 0.3s ease;
+        }
+        
+        .project-link:hover {
+            transform: scale(1.05);
+        }
+        
+        .role-highlight {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+        
+        .github-link {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .github-button {
+            display: inline-block;
+            background: #24292e;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .github-button:hover {
+            transform: scale(1.05);
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .skills-tags {
+                justify-content: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Don Richardson Bayya</h1>
+            <p class="subtitle">Data Engineer | Data Scientist | AI/ML Engineer | Analytics Professional</p>
+            <p>Transforming data into actionable insights through advanced analytics, machine learning, and intelligent automation</p>
+            
+            <div class="skills-tags">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">Machine Learning</span>
+                <span class="skill-tag">Data Engineering</span>
+                <span class="skill-tag">ETL/ELT</span>
+                <span class="skill-tag">Power BI</span>
+                <span class="skill-tag">Statistical Analysis</span>
+                <span class="skill-tag">AI Engineering</span>
+                <span class="skill-tag">Data Visualization</span>
+                <span class="skill-tag">Predictive Modeling</span>
+            </div>
+        </header>
+        
+        <section class="section">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                
+                <div class="project-card">
+                    <h3>Seoul Bike Sharing Classification <span class="role-highlight">ML Engineer</span></h3>
+                    <p>Advanced machine learning classification model predicting bike sharing demand patterns in Seoul. Implemented feature engineering, model optimization, and performance evaluation to achieve high accuracy in demand forecasting.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">Scikit-learn</span>
+                        <span class="tech-badge">Pandas</span>
+                        <span class="tech-badge">Data Preprocessing</span>
+                        <span class="tech-badge">Classification</span>
+                    </div>
+                    <a href="https://github.com/donrichardsonbayya/seoul-bike-classification" class="project-link">View Project</a>
+                </div>
+                
+                <div class="project-card">
+                    <h3>AI Trading Chatbot <span class="role-highlight">AI Engineer</span></h3>
+                    <p>Intelligent conversational AI system for trading assistance and market analysis. Combines natural language processing with financial data analysis to provide real-time trading insights and automated decision support.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">NLP</span>
+                        <span class="tech-badge">API Integration</span>
+                        <span class="tech-badge">Financial Data</span>
+                        <span class="tech-badge">Chatbot Development</span>
+                    </div>
+                    <a href="https://github.com/donrichardsonbayya/ai-trading-chatbot" class="project-link">View Project</a>
+                </div>
+                
+                <div class="project-card">
+                    <h3>Gender Pay Gap Analysis <span class="role-highlight">Data Analyst</span></h3>
+                    <p>Comprehensive statistical analysis examining gender pay disparities across industries and demographics. Applied advanced statistical techniques to identify patterns, correlations, and actionable insights for organizational equity.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">Statistical Analysis</span>
+                        <span class="tech-badge">Data Visualization</span>
+                        <span class="tech-badge">Hypothesis Testing</span>
+                        <span class="tech-badge">Exploratory Data Analysis</span>
+                    </div>
+                    <a href="https://github.com/donrichardsonbayya/gender-pay-gap-analysis" class="project-link">View Project</a>
+                </div>
+                
+                <div class="project-card">
+                    <h3>Renewable Energy ESG Modeling <span class="role-highlight">Data Scientist</span></h3>
+                    <p>Predictive modeling framework for Environmental, Social, and Governance (ESG) factors in renewable energy investments. Developed sophisticated algorithms to assess sustainability metrics and investment potential.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">Predictive Modeling</span>
+                        <span class="tech-badge">ESG Analytics</span>
+                        <span class="tech-badge">Financial Modeling</span>
+                        <span class="tech-badge">Regression Analysis</span>
+                    </div>
+                    <a href="https://github.com/donrichardsonbayya/renewable-energy-esg-modeling" class="project-link">View Project</a>
+                </div>
+                
+                <div class="project-card">
+                    <h3>Wildfire Infrastructure Damage Assessment <span class="role-highlight">Data Scientist</span></h3>
+                    <p>Geospatial analysis and predictive modeling system for assessing wildfire impact on critical infrastructure. Utilized satellite data and machine learning to predict damage patterns and support emergency response planning.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">Geospatial Analysis</span>
+                        <span class="tech-badge">Remote Sensing</span>
+                        <span class="tech-badge">Risk Modeling</span>
+                        <span class="tech-badge">Disaster Analytics</span>
+                    </div>
+                    <a href="https://github.com/donrichardsonbayya/wildfire-infrastructure-damage" class="project-link">View Project</a>
+                </div>
+                
+                <div class="project-card">
+                    <h3>Healthcare Management SQL System <span class="role-highlight">Data Engineer</span></h3>
+                    <p>Comprehensive database design and management system for healthcare operations. Implemented complex queries, stored procedures, and data warehousing solutions to optimize patient care workflows and operational efficiency.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">SQL Server</span>
+                        <span class="tech-badge">Database Design</span>
+                        <span class="tech-badge">ETL Processes</span>
+                        <span class="tech-badge">Healthcare Data</span>
+                        <span class="tech-badge">Data Warehousing</span>
+                    </div>
+                    <a href="https://github.com/donrichardsonbayya/healthcare_management_sql_project" class="project-link">View Project</a>
+                </div>
+                
+                <div class="project-card">
+                    <h3>Global Happiness Power BI Dashboard <span class="role-highlight">Data Analyst</span></h3>
+                    <p>Interactive business intelligence dashboard analyzing global happiness indices and socioeconomic factors. Created dynamic visualizations and KPI tracking to identify trends and correlations across countries and time periods.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Power BI</span>
+                        <span class="tech-badge">DAX</span>
+                        <span class="tech-badge">Data Visualization</span>
+                        <span class="tech-badge">KPI Development</span>
+                        <span class="tech-badge">Interactive Dashboards</span>
+                    </div>
+                    <a href="https://github.com/donrichardsonbayya/global_happiness_powerbi" class="project-link">View Project</a>
+                </div>
+                
+                <div class="project-card">
+                    <h3>Library Management SQL System <span class="role-highlight">ETL Developer</span></h3>
+                    <p>Robust database management system for library operations with advanced SQL implementations. Features include automated data pipelines, complex reporting queries, and optimized data structures for efficient information retrieval.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">SQL</span>
+                        <span class="tech-badge">Database Administration</span>
+                        <span class="tech-badge">Query Optimization</span>
+                        <span class="tech-badge">Data Pipeline</span>
+                        <span class="tech-badge">Reporting</span>
+                    </div>
+                    <a href="https://github.com/donrichardsonbayya/libraby_management_sql_project" class="project-link">View Project</a>
+                </div>
+                
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>Technical Competencies</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                <div>
+                    <h3 style="color: #667eea; margin-bottom: 15px;">Data Engineering & ETL</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 8px;">✓ Database Design & Architecture</li>
+                        <li style="margin-bottom: 8px;">✓ ETL/ELT Pipeline Development</li>
+                        <li style="margin-bottom: 8px;">✓ Data Warehousing Solutions</li>
+                        <li style="margin-bottom: 8px;">✓ SQL Server & Database Management</li>
+                        <li style="margin-bottom: 8px;">✓ Data Quality & Governance</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="color: #667eea; margin-bottom: 15px;">Data Science & Analytics</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 8px;">✓ Statistical Analysis & Hypothesis Testing</li>
+                        <li style="margin-bottom: 8px;">✓ Predictive Modeling & Forecasting</li>
+                        <li style="margin-bottom: 8px;">✓ Exploratory Data Analysis</li>
+                        <li style="margin-bottom: 8px;">✓ Feature Engineering & Selection</li>
+                        <li style="margin-bottom: 8px;">✓ A/B Testing & Experimentation</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="color: #667eea; margin-bottom: 15px;">AI/ML Engineering</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 8px;">✓ Machine Learning Model Development</li>
+                        <li style="margin-bottom: 8px;">✓ Natural Language Processing</li>
+                        <li style="margin-bottom: 8px;">✓ Classification & Regression Models</li>
+                        <li style="margin-bottom: 8px;">✓ Model Optimization & Tuning</li>
+                        <li style="margin-bottom: 8px;">✓ AI System Architecture</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="color: #667eea; margin-bottom: 15px;">Visualization & BI</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 8px;">✓ Power BI Dashboard Development</li>
+                        <li style="margin-bottom: 8px;">✓ Interactive Data Visualization</li>
+                        <li style="margin-bottom: 8px;">✓ KPI Design & Monitoring</li>
+                        <li style="margin-bottom: 8px;">✓ Executive Reporting</li>
+                        <li style="margin-bottom: 8px;">✓ Self-Service Analytics</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <div class="github-link">
+            <a href="https://github.com/donrichardsonbayya" class="github-button">
+                🚀 View All Projects on GitHub
+            </a>
+        </div>
+    </div>
+</body>
+</html>
