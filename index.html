@@ -1,753 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Don Richardson Bayya - Data Professional Portfolio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.7;
-            background: #0f1419;
-            color: #e6e8eb;
-            min-height: 100vh;
-        }
-        
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-        
-        .header {
-            background: linear-gradient(135deg, #1a1f2e 0%, #16213e 100%);
-            border: 1px solid #2d3748;
-            border-radius: 24px;
-            padding: 60px 40px;
-            margin-bottom: 40px;
-            text-align: center;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, transparent 30%, rgba(59, 130, 246, 0.05) 50%, transparent 70%);
-            pointer-events: none;
-        }
-        
-        .header h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 16px;
-            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            position: relative;
-        }
-        
-        .header .subtitle {
-            font-size: 1.4rem;
-            color: #94a3b8;
-            margin-bottom: 24px;
-            font-weight: 500;
-        }
-
-        .header .description {
-            font-size: 1.1rem;
-            color: #cbd5e1;
-            max-width: 800px;
-            margin: 0 auto 32px;
-            line-height: 1.6;
-        }
-        
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 12px;
-            margin-top: 32px;
-        }
-        
-        .skill {
-            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-            border: 1px solid #475569;
-            color: #e2e8f0;
-            padding: 10px 18px;
-            border-radius: 24px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .skill:hover {
-            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
-            border-color: #3b82f6;
-            transform: translateY(-2px);
-        }
-        
-        .section {
-            background: linear-gradient(135deg, #1a1f2e 0%, #16213e 100%);
-            border: 1px solid #2d3748;
-            border-radius: 24px;
-            padding: 48px 40px;
-            margin-bottom: 40px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-        }
-        
-        .section h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 40px;
-            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-align: center;
-        }
-
-        .category-buttons {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 16px;
-            margin-bottom: 48px;
-        }
-
-        .category-btn {
-            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-            border: 2px solid #475569;
-            color: #e2e8f0;
-            padding: 16px 32px;
-            border-radius: 12px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .category-btn:hover {
-            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
-            border-color: #3b82f6;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(59, 130, 246, 0.3);
-        }
-
-        .category-btn.active {
-            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
-            border-color: #3b82f6;
-            box-shadow: 0 8px 24px rgba(59, 130, 246, 0.4);
-        }
-
-        .intro-text {
-            text-align: center;
-            margin-top: 32px;
-            color: #cbd5e1;
-            font-size: 1.1rem;
-            line-height: 1.7;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .back-btn {
-            background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
-            border: 2px solid #6b7280;
-            color: white;
-            padding: 12px 24px;
-            border-radius: 12px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-bottom: 32px;
-        }
-
-        .back-btn:hover {
-            background: linear-gradient(135deg, #4b5563 0%, #374151 100%);
-            border-color: #4b5563;
-            transform: translateY(-2px);
-        }
-        
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 32px;
-        }
-        
-        .project {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            border: 1px solid #334155;
-            border-radius: 20px;
-            padding: 32px;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .project::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, transparent 0%, rgba(59, 130, 246, 0.03) 50%, transparent 100%);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .project:hover {
-            transform: translateY(-8px);
-            border-color: #3b82f6;
-            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15);
-        }
-
-        .project:hover::before {
-            opacity: 1;
-        }
-        
-        .project h3 {
-            color: #f1f5f9;
-            margin-bottom: 16px;
-            font-size: 1.5rem;
-            font-weight: 700;
-            position: relative;
-        }
-        
-        .role-tag {
-            display: inline-block;
-            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
-            color: white;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            margin-left: 12px;
-            position: relative;
-        }
-        
-        .project p {
-            color: #cbd5e1;
-            margin-bottom: 20px;
-            line-height: 1.7;
-            font-size: 0.95rem;
-        }
-
-        .project p strong {
-            color: #e2e8f0;
-            font-weight: 600;
-        }
-        
-        .tech-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 24px;
-        }
-        
-        .tech-tag {
-            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-            border: 1px solid #475569;
-            color: #94a3b8;
-            padding: 6px 14px;
-            border-radius: 16px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .tech-tag:hover {
-            background: linear-gradient(135deg, #374151 0%, #4b5563 100%);
-            color: #e5e7eb;
-            border-color: #6b7280;
-        }
-        
-        .project-link {
-            display: inline-block;
-            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
-            color: white;
-            padding: 14px 28px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-        
-        .project-link:hover {
-            background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(59, 130, 246, 0.4);
-        }
-        
-        .competencies {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 32px;
-        }
-        
-        .competency-area {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            border: 1px solid #334155;
-            padding: 32px;
-            border-radius: 20px;
-            transition: all 0.3s ease;
-        }
-
-        .competency-area:hover {
-            border-color: #3b82f6;
-            box-shadow: 0 12px 32px rgba(59, 130, 246, 0.1);
-        }
-        
-        .competency-area h3 {
-            color: #f1f5f9;
-            margin-bottom: 20px;
-            font-size: 1.3rem;
-            font-weight: 700;
-        }
-        
-        .competency-area ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        
-        .competency-area li {
-            padding: 8px 0;
-            color: #cbd5e1;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            position: relative;
-            padding-left: 24px;
-        }
-        
-        .competency-area li:before {
-            content: "✓";
-            color: #10b981;
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-            top: 8px;
-        }
-        
-        .github-section {
-            text-align: center;
-            padding: 48px;
-            background: linear-gradient(135deg, #1a1f2e 0%, #16213e 100%);
-            border: 1px solid #2d3748;
-            border-radius: 24px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-        }
-        
-        .github-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
-            color: white;
-            padding: 20px 40px;
-            border-radius: 16px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-            border: 2px solid #374151;
-        }
-        
-        .github-button:hover {
-            background: linear-gradient(135deg, #111827 0%, #0f172a 100%);
-            border-color: #4b5563;
-            transform: translateY(-4px);
-            box-shadow: 0 12px 32px rgba(0,0,0,0.4);
-        }
-        
-        .value-prop {
-            background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
-            color: white;
-            padding: 48px 40px;
-            border-radius: 24px;
-            margin-bottom: 40px;
-            text-align: center;
-            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-        
-        .value-prop h2 {
-            margin-bottom: 20px;
-            color: white;
-            font-size: 2.2rem;
-            font-weight: 700;
-        }
-
-        .value-prop p {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            color: rgba(255,255,255,0.9);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .hidden {
-            display: none !important;
-        }
-        
-        @media (max-width: 768px) {
-            .container {
-                padding: 20px 16px;
-            }
-            
-            .header {
-                padding: 40px 24px;
-            }
-            
-            .header h1 {
-                font-size: 2.5rem;
-            }
-            
-            .section {
-                padding: 32px 24px;
-            }
-            
-            .projects {
-                grid-template-columns: 1fr;
-            }
-            
-            .competencies {
-                grid-template-columns: 1fr;
-            }
-            
-            .category-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .category-btn {
-                width: 280px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .header h1 {
-                font-size: 2rem;
-            }
-            
-            .project {
-                padding: 24px;
-            }
-            
-            .competency-area {
-                padding: 24px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Don Richardson Bayya - Data Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0f1419;
+      color: #e6e8eb;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 2rem;
+    }
+    .header, .section, .github-section, .value-prop {
+      background: linear-gradient(135deg, #1a1f2e, #16213e);
+      border: 1px solid #2d3748;
+      border-radius: 1.5rem;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .header h1 {
+      font-size: 3rem;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .header .intro-text {
+      max-width: 800px;
+      margin: 1rem auto;
+      color: #cbd5e1;
+      font-size: 1.1rem;
+    }
+    .skills, .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+    .skill, .tech-tag {
+      background: #1e293b;
+      padding: 0.5rem 1rem;
+      border-radius: 1rem;
+      border: 1px solid #475569;
+      font-size: 0.85rem;
+    }
+    .value-prop h2, .section h2 {
+      font-size: 2rem;
+      color: white;
+      margin-bottom: 1rem;
+    }
+    .category-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .category-btn {
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.75rem;
+      border: 2px solid #475569;
+      background: #1e293b;
+      color: #e2e8f0;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .category-btn:hover, .category-btn.active {
+      background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+      border-color: #3b82f6;
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .project {
+      background: #0f172a;
+      border: 1px solid #334155;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      transition: all 0.3s ease;
+      opacity: 1;
+      visibility: visible;
+      height: auto;
+      position: relative;
+    }
+    .project.hidden {
+      visibility: hidden !important;
+      opacity: 0 !important;
+      height: 0 !important;
+      pointer-events: none !important;
+      position: absolute !important;
+      overflow: hidden !important;
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+    }
+    .project h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.25rem;
+    }
+    .project p {
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+    .project-link {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: #3b82f6;
+      color: white;
+      text-decoration: none;
+      border-radius: 0.5rem;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <header class="header">
-            <h1>Don Richardson Bayya</h1>
-            <p class="subtitle">Data Scientist | Data Engineer | AI/ML Engineer | Analytics Professional</p>
-            <p class="description">Transforming raw data into actionable business insights through advanced analytics, machine learning, and scalable data solutions</p>
-            
-            <div class="skills">
-                <span class="skill">Python</span>
-                <span class="skill">SQL</span>
-                <span class="skill">Machine Learning</span>
-                <span class="skill">Data Engineering</span>
-                <span class="skill">ETL/ELT</span>
-                <span class="skill">Power BI</span>
-                <span class="skill">Statistical Analysis</span>
-                <span class="skill">AI Engineering</span>
-                <span class="skill">Predictive Modeling</span>
-                <span class="skill">Database Design</span>
-            </div>
-        </header>
+  <div class="container">
+    <header class="header">
+      <h1>Don Richardson Bayya</h1>
+      <div class="intro-text">
+        <p>Hey there! I'm Don — a data engineer, scientist, and AI enthusiast on a mission to turn raw data into real-world impact. I’ve built chatbots that analyze the stock market, dashboards that inform policy, and ML models that predict demand with striking accuracy. If you're looking for someone who blends technical depth with business understanding, you're in the right place. Scroll on to explore some of the projects that define my journey so far.</p>
+      </div>
+      <div class="skills">
+        <span class="skill">Python</span>
+        <span class="skill">SQL</span>
+        <span class="skill">Power BI</span>
+        <span class="skill">Machine Learning</span>
+        <span class="skill">ETL/ELT</span>
+        <span class="skill">NLP</span>
+        <span class="skill">Azure</span>
+      </div>
+    </header>
 
-        <div class="value-prop">
-            <h2>Data-Driven Problem Solver</h2>
-            <p>Specialized in end-to-end data solutions: from raw data extraction and transformation to advanced machine learning models and executive dashboards. Proven ability to deliver measurable business impact through data science, engineering, and AI initiatives.</p>
-        </div>
-        
-        <section class="section">
-            <h2>My Work & Expertise</h2>
-            
-            <div class="category-buttons">
-                <button class="category-btn" onclick="showProjects('analytics')">Data Analytics Projects</button>
-                <button class="category-btn" onclick="showProjects('science')">Data Science Projects</button>
-                <button class="category-btn" onclick="showProjects('engineering')">Data Engineering Projects</button>
-                <button class="category-btn" onclick="showProjects('ai-ml')">AI/ML Projects</button>
-            </div>
-            
-            <div class="intro-text">
-                <p>Explore my portfolio organized by specialization. Each section showcases projects that demonstrate specific skills and deliver measurable business impact across different domains of data science and engineering.</p>
-            </div>
-        </section>
-
-        <!-- Projects Section (Initially Hidden) -->
-        <section class="section hidden" id="projects-section">
-            <h2 id="projects-title">Featured Projects</h2>
-            <button class="back-btn" onclick="hideProjects()">← Back to Overview</button>
-            
-            <div class="projects" id="projects-container">
-                
-                <div class="project" data-categories="ai-ml">
-                    <h3>AI Trading Chatbot <span class="role-tag">AI Engineer</span></h3>
-                    <p><strong>Business Impact:</strong> Automated trading decision support system combining NLP with financial market analysis. Demonstrates end-to-end AI engineering from data ingestion to conversational AI deployment.</p>
-                    <p><strong>Key Achievements:</strong> Real-time market data processing, intelligent conversation handling, automated trading insights generation.</p>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">NLP</span>
-                        <span class="tech-tag">API Integration</span>
-                        <span class="tech-tag">Financial Data</span>
-                        <span class="tech-tag">AI Architecture</span>
-                    </div>
-                    <a href="https://github.com/donrichardsonbayya/ai-trading-chatbot" class="project-link">View Project</a>
-                </div>
-                
-                <div class="project" data-categories="science">
-                    <h3>Seoul Bike Sharing Demand Classification <span class="role-tag">Data Scientist</span></h3>
-                    <p><strong>Business Impact:</strong> Predictive model achieving 92%+ accuracy in bike sharing demand forecasting, enabling optimal resource allocation and inventory management for urban mobility systems.</p>
-                    <p><strong>Key Achievements:</strong> Feature engineering on weather/temporal data, model optimization, cross-validation implementation.</p>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Scikit-learn</span>
-                        <span class="tech-tag">Feature Engineering</span>
-                        <span class="tech-tag">Classification</span>
-                        <span class="tech-tag">Model Optimization</span>
-                    </div>
-                    <a href="https://github.com/donrichardsonbayya/seoul-bike-classification" class="project-link">View Project</a>
-                </div>
-                
-                <div class="project" data-categories="engineering">
-                    <h3>Healthcare Management SQL System <span class="role-tag">Data Engineer</span></h3>
-                    <p><strong>Business Impact:</strong> Comprehensive database architecture supporting 10,000+ patient records with optimized query performance and HIPAA-compliant data governance. Reduced report generation time by 75%.</p>
-                    <p><strong>Key Achievements:</strong> Complex relational design, stored procedures, automated ETL pipelines, performance optimization.</p>
-                    <div class="tech-tags">
-                        <span class="tech-tag">SQL Server</span>
-                        <span class="tech-tag">Database Design</span>
-                        <span class="tech-tag">ETL Pipelines</span>
-                        <span class="tech-tag">Healthcare Data</span>
-                        <span class="tech-tag">Performance Tuning</span>
-                    </div>
-                    <a href="https://github.com/donrichardsonbayya/healthcare_management_sql_project" class="project-link">View Project</a>
-                </div>
-                
-                <div class="project" data-categories="analytics">
-                    <h3>Global Happiness Analytics Dashboard <span class="role-tag">Data Analyst</span></h3>
-                    <p><strong>Business Impact:</strong> Interactive Power BI dashboard analyzing happiness indices across 156 countries, identifying key socioeconomic drivers and policy recommendations for government stakeholders.</p>
-                    <p><strong>Key Achievements:</strong> Advanced DAX calculations, dynamic filtering, correlation analysis, executive-ready visualizations.</p>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Power BI</span>
-                        <span class="tech-tag">DAX</span>
-                        <span class="tech-tag">Statistical Analysis</span>
-                        <span class="tech-tag">Data Visualization</span>
-                        <span class="tech-tag">KPI Development</span>
-                    </div>
-                    <a href="https://github.com/donrichardsonbayya/global_happiness_powerbi" class="project-link">View Project</a>
-                </div>
-                
-                <div class="project" data-categories="science">
-                    <h3>Gender Pay Gap Statistical Analysis <span class="role-tag">Data Scientist</span></h3>
-                    <p><strong>Business Impact:</strong> Comprehensive statistical analysis revealing 15-23% pay gaps across industries, providing actionable insights for HR policy and compensation strategy development.</p>
-                    <p><strong>Key Achievements:</strong> Hypothesis testing, multivariate regression, statistical significance testing, demographic segmentation.</p>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Statistical Analysis</span>
-                        <span class="tech-tag">Hypothesis Testing</span>
-                        <span class="tech-tag">Regression Analysis</span>
-                        <span class="tech-tag">Data Visualization</span>
-                    </div>
-                    <a href="https://github.com/donrichardsonbayya/gender-pay-gap-analysis" class="project-link">View Project</a>
-                </div>
-                
-                <div class="project" data-categories="science ai-ml">
-                    <h3>Renewable Energy ESG Modeling <span class="role-tag">Data Scientist</span></h3>
-                    <p><strong>Business Impact:</strong> Predictive ESG scoring model for renewable energy investments, helping portfolio managers identify sustainable opportunities with 18% higher returns.</p>
-                    <p><strong>Key Achievements:</strong> Multi-factor modeling, ESG metric quantification, investment risk assessment, predictive analytics.</p>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Financial Modeling</span>
-                        <span class="tech-tag">ESG Analytics</span>
-                        <span class="tech-tag">Predictive Modeling</span>
-                        <span class="tech-tag">Risk Assessment</span>
-                    </div>
-                    <a href="https://github.com/donrichardsonbayya/renewable-energy-esg-modeling" class="project-link">View Project</a>
-                </div>
-                
-                <div class="project" data-categories="engineering">
-                    <h3>Wildfire Infrastructure Risk Assessment <span class="role-tag">Data Engineer</span></h3>
-                    <p><strong>Business Impact:</strong> Geospatial data pipeline processing satellite imagery and infrastructure data to predict wildfire damage risk, supporting emergency response planning for utility companies.</p>
-                    <p><strong>Key Achievements:</strong> Geospatial ETL, satellite data processing, risk modeling, automated alert systems.</p>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Geospatial Analysis</span>
-                        <span class="tech-tag">Data Pipelines</span>
-                        <span class="tech-tag">Risk Modeling</span>
-                        <span class="tech-tag">Satellite Data</span>
-                    </div>
-                    <a href="https://github.com/donrichardsonbayya/wildfire-infrastructure-damage" class="project-link">View Project</a>
-                </div>
-                
-                <div class="project" data-categories="engineering">
-                    <h3>Library Management SQL Database <span class="role-tag">Data Engineer</span></h3>
-                    <p><strong>Business Impact:</strong> Scalable database system managing 50,000+ books and user transactions with automated reporting and inventory management, improving operational efficiency by 40%.</p>
-                    <p><strong>Key Achievements:</strong> Normalized database design, complex query optimization, automated reporting, transaction management.</p>
-                    <div class="tech-tags">
-                        <span class="tech-tag">SQL</span>
-                        <span class="tech-tag">Database Design</span>
-                        <span class="tech-tag">Query Optimization</span>
-                        <span class="tech-tag">Automated Reporting</span>
-                        <span class="tech-tag">Transaction Management</span>
-                    </div>
-                    <a href="https://github.com/donrichardsonbayya/libraby_management_sql_project" class="project-link">View Project</a>
-                </div>
-                
-            </div>
-        </section>
-        
-        <section class="section">
-            <h2>Core Technical Competencies</h2>
-            <div class="competencies">
-                <div class="competency-area">
-                    <h3>🔧 Data Engineering & ETL</h3>
-                    <ul>
-                        <li>Database Architecture & Design (SQL Server, PostgreSQL)</li>
-                        <li>ETL/ELT Pipeline Development & Automation</li>
-                        <li>Data Warehousing & Lake Architecture</li>
-                        <li>Performance Optimization & Query Tuning</li>
-                        <li>Data Quality & Governance Frameworks</li>
-                        <li>Cloud Data Platforms (AWS, Azure)</li>
-                        <li>Real-time Data Processing & Streaming</li>
-                    </ul>
-                </div>
-                
-                <div class="competency-area">
-                    <h3>📊 Data Science & Analytics</h3>
-                    <ul>
-                        <li>Statistical Analysis & Hypothesis Testing</li>
-                        <li>Predictive Modeling & Forecasting</li>
-                        <li>A/B Testing & Experimental Design</li>
-                        <li>Feature Engineering & Selection</li>
-                        <li>Time Series Analysis & Forecasting</li>
-                        <li>Multivariate Statistical Methods</li>
-                        <li>Business Intelligence & KPI Development</li>
-                    </ul>
-                </div>
-                
-                <div class="competency-area">
-                    <h3>🤖 AI/ML Engineering</h3>
-                    <ul>
-                        <li>Machine Learning Model Development & Deployment</li>
-                        <li>Natural Language Processing & NLP Pipelines</li>
-                        <li>Classification & Regression Algorithms</li>
-                        <li>Model Optimization & Hyperparameter Tuning</li>
-                        <li>AI System Architecture & MLOps</li>
-                        <li>Deep Learning & Neural Networks</li>
-                        <li>Computer Vision & Image Processing</li>
-                    </ul>
-                </div>
-                
-                <div class="competency-area">
-                    <h3>📈 Analytics & Visualization</h3>
-                    <ul>
-                        <li>Power BI Dashboard Development & DAX</li>
-                        <li>Advanced Data Visualization Techniques</li>
-                        <li>Executive Reporting & Stakeholder Communication</li>
-                        <li>Self-Service Analytics Implementation</li>
-                        <li>Interactive Dashboard Design</li>
-                        <li>Geospatial Analytics & Mapping</li>
-                        <li>Financial & Risk Analytics</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        
-        <div class="github-section">
-            <a href="https://github.com/donrichardsonbayya" class="github-button">
-                🚀 Explore All Projects on GitHub
-            </a>
-        </div>
+    <div class="value-prop">
+      <h2>Full-Stack Data Professional</h2>
+      <p>From designing scalable pipelines to deploying AI models, I bring data to life with a focus on performance, precision, and purpose.</p>
     </div>
 
-    <script>
-        // Project navigation functionality
-        function showProjects(category) {
-            const projectsSection = document.getElementById('projects-section');
-            const projectsTitle = document.getElementById('projects-title');
-            const projects = document.querySelectorAll('.project');
-            
-            // Update title based on category
-            const categoryTitles = {
-                'analytics': 'Data Analytics Projects',
-                'science': 'Data Science Projects', 
-                'engineering': 'Data Engineering Projects',
-                'ai-ml': 'AI/ML Projects'
-            };
-            
-            projectsTitle.textContent = categoryTitles[category];
-            
-            // Filter and show projects
-            projects.forEach(project => {
-                const projectCategories = project.getAttribute('data-categories');
-                if (projectCategories.includes(category)) {
-                    project.classList.remove('hidden');
-                } else {
-                    project.classList.add('hidden');
-                }
-            });
-            
-            // Show projects section with smooth transition
-            projectsSection.classList.remove('hidden');
-            projectsSection.scrollIntoView({ behavior: 'smooth' });
-        }
-        
-        function hideProjects() {
-            const projectsSection = document.getElementById('projects-section');
-            projectsSection.classList.add('hidden');
-            
-            // Scroll back to top
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+    <section class="section">
+      <h2>Explore My Projects</h2>
+      <div class="category-buttons">
+        <button class="category-btn" onclick="filterProjects('all')">All Projects</button>
+        <button class="category-btn" onclick="filterProjects('analytics')">Data Analytics</button>
+        <button class="category-btn" onclick="filterProjects('science')">Data Science</button>
+        <button class="category-btn" onclick="filterProjects('engineering')">Data Engineering</button>
+        <button class="category-btn" onclick="filterProjects('ai-ml')">AI/ML</button>
+      </div>
+      <div class="projects" id="projects">
+        <div class="project" data-category="analytics">
+          <h3>Global Happiness Analytics Dashboard</h3>
+          <p>Power BI dashboard visualizing happiness trends and socioeconomic indicators across 156 countries.</p>
+          <div class="tech-tags"><span class="tech-tag">Power BI</span><span class="tech-tag">DAX</span></div>
+          <a href="https://github.com/donrichardsonbayya/global_happiness_powerbi" target="_blank" rel="noopener noreferrer" class="project-link">View Project</a>
+        </div>
+        <div class="project" data-category="science">
+          <h3>Seoul Bike Sharing Demand Classification</h3>
+          <p>Built an ML model with 92%+ accuracy to predict daily bike demand using weather and time features.</p>
+          <div class="tech-tags"><span class="tech-tag">Python</span><span class="tech-tag">Sklearn</span></div>
+          <a href="https://github.com/donrichardsonbayya/seoul-bike-classification" target="_blank" rel="noopener noreferrer" class="project-link">View Project</a>
+        </div>
+        <div class="project" data-category="ai-ml">
+          <h3>AI Trading Chatbot</h3>
+          <p>Conversational AI using LLMs and financial APIs to provide real-time trading insights.</p>
+          <div class="tech-tags"><span class="tech-tag">NLP</span><span class="tech-tag">LangChain</span></div>
+          <a href="https://github.com/donrichardsonbayya/ai-trading-chatbot" target="_blank" rel="noopener noreferrer" class="project-link">View Project</a>
+        </div>
+        <div class="project" data-category="analytics">
+          <h3>Healthcare Management SQL System</h3>
+          <p>Designed a database system supporting 10K+ patient records with ETL pipelines for automated reporting.</p>
+          <div class="tech-tags"><span class="tech-tag">SQL</span><span class="tech-tag">ETL</span></div>
+          <a href="https://github.com/donrichardsonbayya/healthcare_management_sql_project" target="_blank" rel="noopener noreferrer" class="project-link">View Project</a>
+        </div>
+        <div class="project" data-category="science">
+          <h3>Gender Pay Gap Statistical Analysis</h3>
+          <p>Statistical study across industries revealing a 15–23% pay gap, aiding in HR policy reforms.</p>
+          <div class="tech-tags"><span class="tech-tag">Stats</span><span class="tech-tag">Pandas</span></div>
+          <a href="https://github.com/donrichardsonbayya/gender-pay-gap-analysis" target="_blank" rel="noopener noreferrer" class="project-link">View Project</a>
+        </div>
+        <div class="project" data-category="science ai-ml">
+          <h3>Renewable Energy ESG Modeling</h3>
+          <p>Built predictive ESG scores for investment screening—helped flag projects with 18% higher returns.</p>
+          <div class="tech-tags"><span class="tech-tag">ML</span><span class="tech-tag">ESG</span></div>
+          <a href="https://github.com/donrichardsonbayya/renewable-energy-esg-modeling" target="_blank" rel="noopener noreferrer" class="project-link">View Project</a>
+        </div>
+        <div class="project" data-category="engineering science">
+          <h3>Wildfire Infrastructure Risk Assessment</h3>
+          <p>Geospatial pipeline combining satellite and infrastructure data to model fire damage risk for utilities.</p>
+          <div class="tech-tags"><span class="tech-tag">Geospatial</span><span class="tech-tag">Python</span></div>
+          <a href="https://github.com/donrichardsonbayya/wildfire-infrastructure-damage" target="_blank" rel="noopener noreferrer" class="project-link">View Project</a>
+        </div>
+        <div class="project" data-category="analytics">
+          <h3>Library Management SQL Database</h3>
+          <p>Database supporting 50K+ books and transactions with reporting features and optimized queries.</p>
+          <div class="tech-tags"><span class="tech-tag">SQL</span><span class="tech-tag">Inventory</span></div>
+          <a href="https://github.com/donrichardsonbayya/libraby_management_sql_project" target="_blank" rel="noopener noreferrer" class="project-link">View Project</a>
+        </div>
+      </div>
+    </section>
 
-        // Smooth animations on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+    <div class="github-section">
+      <a href="https://github.com/donrichardsonbayya" target="_blank" rel="noopener noreferrer" class="project-link">🚀 Explore All on GitHub</a>
+    </div>
+  </div>
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Apply animation to projects when they become visible
-        document.addEventListener('DOMContentLoaded', () => {
-            const projects = document.querySelectorAll('.project');
-            projects.forEach(project => {
-                project.style.opacity = '0';
-                project.style.transform = 'translateY(20px)';
-                project.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(project);
-            });
-        });
-    </script>
+  <script>
+    function filterProjects(category) {
+      const projects = document.querySelectorAll('.project');
+      projects.forEach(p => {
+        const tags = p.dataset.category;
+        const visible = category === 'all' || tags.includes(category);
+        p.classList.toggle('hidden', !visible);
+      });
+    }
+  </script>
 </body>
 </html>
