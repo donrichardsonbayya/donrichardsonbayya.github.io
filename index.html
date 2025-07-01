@@ -5,165 +5,322 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Don Richardson Bayya - Data Professional Portfolio</title>
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
+        * {
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            background: #0f1419;
+            color: #e6e8eb;
             min-height: 100vh;
-            color: #333;
         }
         
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 40px 20px;
         }
         
         .header {
-            background: white;
-            border-radius: 15px;
-            padding: 40px;
-            margin-bottom: 30px;
+            background: linear-gradient(135deg, #1a1f2e 0%, #16213e 100%);
+            border: 1px solid #2d3748;
+            border-radius: 24px;
+            padding: 60px 40px;
+            margin-bottom: 40px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(59, 130, 246, 0.05) 50%, transparent 70%);
+            pointer-events: none;
         }
         
         .header h1 {
-            font-size: 2.5rem;
-            margin: 0 0 10px 0;
-            color: #2c3e50;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
         }
         
         .header .subtitle {
-            font-size: 1.2rem;
-            color: #7f8c8d;
-            margin-bottom: 20px;
+            font-size: 1.4rem;
+            color: #94a3b8;
+            margin-bottom: 24px;
+            font-weight: 500;
+        }
+
+        .header .description {
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            max-width: 800px;
+            margin: 0 auto 32px;
+            line-height: 1.6;
         }
         
         .skills {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 10px;
-            margin-top: 20px;
+            gap: 12px;
+            margin-top: 32px;
         }
         
         .skill {
-            background: #667eea;
-            color: white;
-            padding: 8px 15px;
-            border-radius: 20px;
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            border: 1px solid #475569;
+            color: #e2e8f0;
+            padding: 10px 18px;
+            border-radius: 24px;
             font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .skill:hover {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            border-color: #3b82f6;
+            transform: translateY(-2px);
         }
         
         .section {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            background: linear-gradient(135deg, #1a1f2e 0%, #16213e 100%);
+            border: 1px solid #2d3748;
+            border-radius: 24px;
+            padding: 48px 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
         }
         
         .section h2 {
-            font-size: 2rem;
-            margin-bottom: 30px;
-            color: #2c3e50;
-            border-bottom: 3px solid #667eea;
-            padding-bottom: 10px;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+        }
+
+        .category-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-bottom: 48px;
+        }
+
+        .category-btn {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            border: 2px solid #475569;
+            color: #e2e8f0;
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-btn:hover {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            border-color: #3b82f6;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(59, 130, 246, 0.3);
+        }
+
+        .category-btn.active {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            border-color: #3b82f6;
+            box-shadow: 0 8px 24px rgba(59, 130, 246, 0.4);
+        }
+
+        .intro-text {
+            text-align: center;
+            margin-top: 32px;
+            color: #cbd5e1;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .back-btn {
+            background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+            border: 2px solid #6b7280;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 32px;
+        }
+
+        .back-btn:hover {
+            background: linear-gradient(135deg, #4b5563 0%, #374151 100%);
+            border-color: #4b5563;
+            transform: translateY(-2px);
         }
         
         .projects {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 32px;
         }
         
         .project {
-            border: 1px solid #e1e8ed;
-            border-radius: 10px;
-            padding: 25px;
-            background: #f8f9fa;
-            transition: transform 0.3s ease;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            border: 1px solid #334155;
+            border-radius: 20px;
+            padding: 32px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, transparent 0%, rgba(59, 130, 246, 0.03) 50%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
         
         .project:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transform: translateY(-8px);
+            border-color: #3b82f6;
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15);
+        }
+
+        .project:hover::before {
+            opacity: 1;
         }
         
         .project h3 {
-            color: #2c3e50;
-            margin-bottom: 10px;
-            font-size: 1.3rem;
+            color: #f1f5f9;
+            margin-bottom: 16px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            position: relative;
         }
         
         .role-tag {
             display: inline-block;
-            background: #e74c3c;
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
             color: white;
-            padding: 4px 8px;
-            border-radius: 12px;
+            padding: 6px 12px;
+            border-radius: 20px;
             font-size: 0.75rem;
-            font-weight: bold;
-            margin-left: 10px;
+            font-weight: 600;
+            margin-left: 12px;
+            position: relative;
         }
         
         .project p {
-            color: #555;
-            margin-bottom: 15px;
-            line-height: 1.5;
+            color: #cbd5e1;
+            margin-bottom: 20px;
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        .project p strong {
+            color: #e2e8f0;
+            font-weight: 600;
         }
         
         .tech-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 15px;
+            gap: 10px;
+            margin-bottom: 24px;
         }
         
         .tech-tag {
-            background: #ecf0f1;
-            color: #2c3e50;
-            padding: 4px 10px;
-            border-radius: 12px;
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            border: 1px solid #475569;
+            color: #94a3b8;
+            padding: 6px 14px;
+            border-radius: 16px;
             font-size: 0.8rem;
-            border: 1px solid #bdc3c7;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .tech-tag:hover {
+            background: linear-gradient(135deg, #374151 0%, #4b5563 100%);
+            color: #e5e7eb;
+            border-color: #6b7280;
         }
         
         .project-link {
             display: inline-block;
-            background: #667eea;
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
             color: white;
-            padding: 10px 20px;
-            border-radius: 20px;
+            padding: 14px 28px;
+            border-radius: 12px;
             text-decoration: none;
-            font-weight: 500;
-            transition: background 0.3s ease;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
         }
         
         .project-link:hover {
-            background: #5a6fd8;
+            background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(59, 130, 246, 0.4);
         }
         
         .competencies {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
         }
         
         .competency-area {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 10px;
-            border-left: 4px solid #667eea;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            border: 1px solid #334155;
+            padding: 32px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .competency-area:hover {
+            border-color: #3b82f6;
+            box-shadow: 0 12px 32px rgba(59, 130, 246, 0.1);
         }
         
         .competency-area h3 {
-            color: #2c3e50;
-            margin-bottom: 15px;
-            font-size: 1.2rem;
+            color: #f1f5f9;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            font-weight: 700;
         }
         
         .competency-area ul {
@@ -173,61 +330,128 @@
         }
         
         .competency-area li {
-            padding: 5px 0;
-            color: #555;
+            padding: 8px 0;
+            color: #cbd5e1;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            position: relative;
+            padding-left: 24px;
         }
         
         .competency-area li:before {
-            content: "✓ ";
-            color: #27ae60;
+            content: "✓";
+            color: #10b981;
             font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 8px;
         }
         
         .github-section {
             text-align: center;
-            padding: 30px;
+            padding: 48px;
+            background: linear-gradient(135deg, #1a1f2e 0%, #16213e 100%);
+            border: 1px solid #2d3748;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
         }
         
         .github-button {
             display: inline-block;
-            background: #24292e;
+            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
             color: white;
-            padding: 15px 30px;
-            border-radius: 25px;
+            padding: 20px 40px;
+            border-radius: 16px;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: background 0.3s ease;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            border: 2px solid #374151;
         }
         
         .github-button:hover {
-            background: #1b1f23;
+            background: linear-gradient(135deg, #111827 0%, #0f172a 100%);
+            border-color: #4b5563;
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.4);
         }
         
         .value-prop {
-            background: #667eea;
+            background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
             color: white;
-            padding: 30px;
-            border-radius: 15px;
-            margin-bottom: 30px;
+            padding: 48px 40px;
+            border-radius: 24px;
+            margin-bottom: 40px;
             text-align: center;
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
+            border: 1px solid rgba(255,255,255,0.1);
         }
         
         .value-prop h2 {
-            margin-bottom: 15px;
-            border: none;
+            margin-bottom: 20px;
             color: white;
+            font-size: 2.2rem;
+            font-weight: 700;
+        }
+
+        .value-prop p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.9);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hidden {
+            display: none !important;
         }
         
         @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2rem;
+            .container {
+                padding: 20px 16px;
             }
+            
+            .header {
+                padding: 40px 24px;
+            }
+            
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section {
+                padding: 32px 24px;
+            }
+            
             .projects {
                 grid-template-columns: 1fr;
             }
+            
             .competencies {
                 grid-template-columns: 1fr;
+            }
+            
+            .category-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .category-btn {
+                width: 280px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .project {
+                padding: 24px;
+            }
+            
+            .competency-area {
+                padding: 24px;
             }
         }
     </style>
@@ -237,7 +461,7 @@
         <header class="header">
             <h1>Don Richardson Bayya</h1>
             <p class="subtitle">Data Scientist | Data Engineer | AI/ML Engineer | Analytics Professional</p>
-            <p>Transforming raw data into actionable business insights through advanced analytics, machine learning, and scalable data solutions</p>
+            <p class="description">Transforming raw data into actionable business insights through advanced analytics, machine learning, and scalable data solutions</p>
             
             <div class="skills">
                 <span class="skill">Python</span>
@@ -259,10 +483,28 @@
         </div>
         
         <section class="section">
-            <h2>Featured Data Projects</h2>
-            <div class="projects">
+            <h2>My Work & Expertise</h2>
+            
+            <div class="category-buttons">
+                <button class="category-btn" onclick="showProjects('analytics')">Data Analytics Projects</button>
+                <button class="category-btn" onclick="showProjects('science')">Data Science Projects</button>
+                <button class="category-btn" onclick="showProjects('engineering')">Data Engineering Projects</button>
+                <button class="category-btn" onclick="showProjects('ai-ml')">AI/ML Projects</button>
+            </div>
+            
+            <div class="intro-text">
+                <p>Explore my portfolio organized by specialization. Each section showcases projects that demonstrate specific skills and deliver measurable business impact across different domains of data science and engineering.</p>
+            </div>
+        </section>
+
+        <!-- Projects Section (Initially Hidden) -->
+        <section class="section hidden" id="projects-section">
+            <h2 id="projects-title">Featured Projects</h2>
+            <button class="back-btn" onclick="hideProjects()">← Back to Overview</button>
+            
+            <div class="projects" id="projects-container">
                 
-                <div class="project">
+                <div class="project" data-categories="ai-ml">
                     <h3>AI Trading Chatbot <span class="role-tag">AI Engineer</span></h3>
                     <p><strong>Business Impact:</strong> Automated trading decision support system combining NLP with financial market analysis. Demonstrates end-to-end AI engineering from data ingestion to conversational AI deployment.</p>
                     <p><strong>Key Achievements:</strong> Real-time market data processing, intelligent conversation handling, automated trading insights generation.</p>
@@ -276,7 +518,7 @@
                     <a href="https://github.com/donrichardsonbayya/ai-trading-chatbot" class="project-link">View Project</a>
                 </div>
                 
-                <div class="project">
+                <div class="project" data-categories="science">
                     <h3>Seoul Bike Sharing Demand Classification <span class="role-tag">Data Scientist</span></h3>
                     <p><strong>Business Impact:</strong> Predictive model achieving 92%+ accuracy in bike sharing demand forecasting, enabling optimal resource allocation and inventory management for urban mobility systems.</p>
                     <p><strong>Key Achievements:</strong> Feature engineering on weather/temporal data, model optimization, cross-validation implementation.</p>
@@ -290,7 +532,7 @@
                     <a href="https://github.com/donrichardsonbayya/seoul-bike-classification" class="project-link">View Project</a>
                 </div>
                 
-                <div class="project">
+                <div class="project" data-categories="engineering">
                     <h3>Healthcare Management SQL System <span class="role-tag">Data Engineer</span></h3>
                     <p><strong>Business Impact:</strong> Comprehensive database architecture supporting 10,000+ patient records with optimized query performance and HIPAA-compliant data governance. Reduced report generation time by 75%.</p>
                     <p><strong>Key Achievements:</strong> Complex relational design, stored procedures, automated ETL pipelines, performance optimization.</p>
@@ -304,7 +546,7 @@
                     <a href="https://github.com/donrichardsonbayya/healthcare_management_sql_project" class="project-link">View Project</a>
                 </div>
                 
-                <div class="project">
+                <div class="project" data-categories="analytics">
                     <h3>Global Happiness Analytics Dashboard <span class="role-tag">Data Analyst</span></h3>
                     <p><strong>Business Impact:</strong> Interactive Power BI dashboard analyzing happiness indices across 156 countries, identifying key socioeconomic drivers and policy recommendations for government stakeholders.</p>
                     <p><strong>Key Achievements:</strong> Advanced DAX calculations, dynamic filtering, correlation analysis, executive-ready visualizations.</p>
@@ -318,7 +560,7 @@
                     <a href="https://github.com/donrichardsonbayya/global_happiness_powerbi" class="project-link">View Project</a>
                 </div>
                 
-                <div class="project">
+                <div class="project" data-categories="science">
                     <h3>Gender Pay Gap Statistical Analysis <span class="role-tag">Data Scientist</span></h3>
                     <p><strong>Business Impact:</strong> Comprehensive statistical analysis revealing 15-23% pay gaps across industries, providing actionable insights for HR policy and compensation strategy development.</p>
                     <p><strong>Key Achievements:</strong> Hypothesis testing, multivariate regression, statistical significance testing, demographic segmentation.</p>
@@ -332,7 +574,7 @@
                     <a href="https://github.com/donrichardsonbayya/gender-pay-gap-analysis" class="project-link">View Project</a>
                 </div>
                 
-                <div class="project">
+                <div class="project" data-categories="science ai-ml">
                     <h3>Renewable Energy ESG Modeling <span class="role-tag">Data Scientist</span></h3>
                     <p><strong>Business Impact:</strong> Predictive ESG scoring model for renewable energy investments, helping portfolio managers identify sustainable opportunities with 18% higher returns.</p>
                     <p><strong>Key Achievements:</strong> Multi-factor modeling, ESG metric quantification, investment risk assessment, predictive analytics.</p>
@@ -346,7 +588,7 @@
                     <a href="https://github.com/donrichardsonbayya/renewable-energy-esg-modeling" class="project-link">View Project</a>
                 </div>
                 
-                <div class="project">
+                <div class="project" data-categories="engineering">
                     <h3>Wildfire Infrastructure Risk Assessment <span class="role-tag">Data Engineer</span></h3>
                     <p><strong>Business Impact:</strong> Geospatial data pipeline processing satellite imagery and infrastructure data to predict wildfire damage risk, supporting emergency response planning for utility companies.</p>
                     <p><strong>Key Achievements:</strong> Geospatial ETL, satellite data processing, risk modeling, automated alert systems.</p>
@@ -360,7 +602,7 @@
                     <a href="https://github.com/donrichardsonbayya/wildfire-infrastructure-damage" class="project-link">View Project</a>
                 </div>
                 
-                <div class="project">
+                <div class="project" data-categories="engineering">
                     <h3>Library Management SQL Database <span class="role-tag">Data Engineer</span></h3>
                     <p><strong>Business Impact:</strong> Scalable database system managing 50,000+ books and user transactions with automated reporting and inventory management, improving operational efficiency by 40%.</p>
                     <p><strong>Key Achievements:</strong> Normalized database design, complex query optimization, automated reporting, transaction management.</p>
@@ -440,5 +682,72 @@
             </a>
         </div>
     </div>
+
+    <script>
+        // Project navigation functionality
+        function showProjects(category) {
+            const projectsSection = document.getElementById('projects-section');
+            const projectsTitle = document.getElementById('projects-title');
+            const projects = document.querySelectorAll('.project');
+            
+            // Update title based on category
+            const categoryTitles = {
+                'analytics': 'Data Analytics Projects',
+                'science': 'Data Science Projects', 
+                'engineering': 'Data Engineering Projects',
+                'ai-ml': 'AI/ML Projects'
+            };
+            
+            projectsTitle.textContent = categoryTitles[category];
+            
+            // Filter and show projects
+            projects.forEach(project => {
+                const projectCategories = project.getAttribute('data-categories');
+                if (projectCategories.includes(category)) {
+                    project.classList.remove('hidden');
+                } else {
+                    project.classList.add('hidden');
+                }
+            });
+            
+            // Show projects section with smooth transition
+            projectsSection.classList.remove('hidden');
+            projectsSection.scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function hideProjects() {
+            const projectsSection = document.getElementById('projects-section');
+            projectsSection.classList.add('hidden');
+            
+            // Scroll back to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Smooth animations on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Apply animation to projects when they become visible
+        document.addEventListener('DOMContentLoaded', () => {
+            const projects = document.querySelectorAll('.project');
+            projects.forEach(project => {
+                project.style.opacity = '0';
+                project.style.transform = 'translateY(20px)';
+                project.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(project);
+            });
+        });
+    </script>
 </body>
 </html>
