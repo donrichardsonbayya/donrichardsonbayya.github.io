@@ -864,6 +864,63 @@ h1, h2, h3, h4, h5, h6 {
         flex-direction: column;
         gap: 1.5rem;
     }
+    
+    /* Mobile SVG Optimizations */
+    .svg-decoration {
+        opacity: 0.03 !important;
+        animation-duration: 30s !important;
+    }
+    
+    .section-svgs .svg-decoration {
+        opacity: 0.02 !important;
+        animation-duration: 35s !important;
+    }
+    
+    /* Reduce SVG sizes on mobile */
+    .svg-decoration[style*="width: 200px"] {
+        width: 100px !important;
+        height: 100px !important;
+    }
+    
+    .svg-decoration[style*="width: 150px"] {
+        width: 80px !important;
+        height: 80px !important;
+    }
+    
+    .svg-decoration[style*="width: 120px"] {
+        width: 60px !important;
+        height: 60px !important;
+    }
+    
+    .svg-decoration[style*="width: 100px"] {
+        width: 50px !important;
+        height: 50px !important;
+    }
+    
+    .svg-decoration[style*="width: 90px"] {
+        width: 45px !important;
+        height: 45px !important;
+    }
+    
+    .svg-decoration[style*="width: 80px"] {
+        width: 40px !important;
+        height: 40px !important;
+    }
+    
+    .svg-decoration[style*="width: 70px"] {
+        width: 35px !important;
+        height: 35px !important;
+    }
+    
+    .svg-decoration[style*="width: 60px"] {
+        width: 30px !important;
+        height: 30px !important;
+    }
+    
+    .svg-decoration[style*="width: 50px"] {
+        width: 25px !important;
+        height: 25px !important;
+    }
 }
 
 @media (max-width: 576px) {
@@ -890,6 +947,27 @@ h1, h2, h3, h4, h5, h6 {
     
     .skill-category {
         padding: 1.5rem;
+    }
+    
+    /* Extra small mobile optimizations */
+    .svg-decoration {
+        display: none !important;
+    }
+    
+    .section-svgs {
+        display: none !important;
+    }
+    
+    .hero-section {
+        padding: 2rem 0;
+    }
+    
+    .navbar {
+        padding: 0.5rem 0;
+    }
+    
+    .navbar-brand {
+        font-size: 1.25rem;
     }
 }
 
@@ -965,6 +1043,27 @@ h1, h2, h3, h4, h5, h6 {
     animation: pattern-drift 30s linear infinite;
     pointer-events: none;
     z-index: 0;
+}
+
+/* Mobile performance optimization */
+@media (max-width: 768px) {
+    .professional-svg-pattern {
+        display: none;
+    }
+    
+    .professional-grid {
+        display: none;
+    }
+    
+    /* Reduce animation complexity on mobile */
+    * {
+        animation-duration: 0.3s !important;
+        animation-delay: 0s !important;
+    }
+    
+    .svg-decoration {
+        animation: none !important;
+    }
 }
 
 @keyframes pattern-drift {
