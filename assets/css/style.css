@@ -406,7 +406,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ===== About Section ===== */
 #about {
-    background: var(--bg-black);
+    background: var(--bg-primary);
     padding: 5rem 0;
 }
 
@@ -472,7 +472,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ===== Projects Section ===== */
 #projects {
-    background: var(--bg-black);
+    background: var(--bg-secondary);
     padding: 5rem 0;
 }
 
@@ -615,7 +615,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ===== Skills Section ===== */
 #skills {
-    background: var(--bg-black);
+    background: var(--bg-primary);
     padding: 5rem 0;
 }
 
@@ -682,7 +682,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ===== Contact Section ===== */
 #contact {
-    background: var(--bg-black);
+    background: var(--bg-secondary);
     padding: 5rem 0;
 }
 
@@ -762,8 +762,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ===== Footer ===== */
 .footer {
-    background: var(--bg-black);
-    color: var(--text-white);
+    background: var(--bg-primary);
+    color: var(--text-dark);
     padding: 2rem 0;
     border-top: 1px solid var(--glass-border);
 }
