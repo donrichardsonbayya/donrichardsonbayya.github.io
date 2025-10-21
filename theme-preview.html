@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Theme Color Previews</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f0f0f0;
+        }
+        
+        .theme-preview {
+            margin: 20px 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            max-width: 600px;
+        }
+        
+        .theme-header {
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .theme-content {
+            padding: 30px;
+            color: white;
+        }
+        
+        .theme-title {
+            font-size: 32px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .theme-subtitle {
+            font-size: 18px;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+        
+        .theme-description {
+            font-size: 16px;
+            margin-bottom: 30px;
+            opacity: 0.8;
+        }
+        
+        .theme-buttons {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .theme-btn {
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+        
+        .theme-btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .theme-stats {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        /* OPTION 2: Dark Corporate Power */
+        .corporate {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+        }
+        
+        .corporate .theme-header {
+            background: linear-gradient(135deg, #ffd700 0%, #ffb000 100%);
+            color: #0a0a0a;
+        }
+        
+        .corporate .theme-title {
+            background: linear-gradient(135deg, #ffd700 0%, #ffb000 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .corporate .theme-btn-primary {
+            background: #ffd700;
+            color: #0a0a0a;
+            border: 2px solid #ffd700;
+        }
+        
+        .corporate .theme-btn-secondary {
+            background: transparent;
+            color: #ffd700;
+            border: 2px solid #ffd700;
+        }
+        
+        .corporate .stat-number {
+            color: #ffd700;
+        }
+        
+        /* OPTION 3: Midnight Blue Professional */
+        .midnight {
+            background: linear-gradient(135deg, #0a0a23 0%, #1a1a2e 100%);
+        }
+        
+        .midnight .theme-header {
+            background: linear-gradient(135deg, #00bfff 0%, #0080ff 100%);
+            color: #0a0a23;
+        }
+        
+        .midnight .theme-title {
+            background: linear-gradient(135deg, #00bfff 0%, #0080ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .midnight .theme-btn-primary {
+            background: #00bfff;
+            color: #0a0a23;
+            border: 2px solid #00bfff;
+        }
+        
+        .midnight .theme-btn-secondary {
+            background: transparent;
+            color: #00bfff;
+            border: 2px solid #00bfff;
+        }
+        
+        .midnight .stat-number {
+            color: #00bfff;
+        }
+        
+        .preview-title {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="preview-title">🎨 Portfolio Theme Color Previews</h1>
+    
+    <!-- OPTION 2: Dark Corporate Power -->
+    <div class="theme-preview corporate">
+        <div class="theme-header">OPTION 2: Dark Corporate Power</div>
+        <div class="theme-content">
+            <div class="theme-title">Don Richardson Bayya</div>
+            <div class="theme-subtitle">Data Engineer & Analytics Professional</div>
+            <div class="theme-description">Passionate about transforming data into actionable insights and building scalable analytics solutions that drive business growth</div>
+            
+            <div class="theme-buttons">
+                <a href="#" class="theme-btn theme-btn-primary">Explore Projects</a>
+                <a href="#" class="theme-btn theme-btn-secondary">Let's Connect</a>
+            </div>
+            
+            <div class="theme-stats">
+                <div class="stat-item">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Projects</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Technologies</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- OPTION 3: Midnight Blue Professional -->
+    <div class="theme-preview midnight">
+        <div class="theme-header">OPTION 3: Midnight Blue Professional</div>
+        <div class="theme-content">
+            <div class="theme-title">Don Richardson Bayya</div>
+            <div class="theme-subtitle">Data Engineer & Analytics Professional</div>
+            <div class="theme-description">Passionate about transforming data into actionable insights and building scalable analytics solutions that drive business growth</div>
+            
+            <div class="theme-buttons">
+                <a href="#" class="theme-btn theme-btn-primary">Explore Projects</a>
+                <a href="#" class="theme-btn theme-btn-secondary">Let's Connect</a>
+            </div>
+            
+            <div class="theme-stats">
+                <div class="stat-item">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Projects</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Technologies</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div style="text-align: center; margin-top: 30px; color: #666;">
+        <p><strong>Which theme do you prefer?</strong></p>
+        <p>Option 2: Black + Gold (Corporate Power) | Option 3: Dark Blue + Electric Blue (Professional)</p>
+    </div>
+</body>
+</html>
