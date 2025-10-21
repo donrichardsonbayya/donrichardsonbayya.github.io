@@ -1,37 +1,11 @@
-# GitHub Pages Configuration
+# GitHub Pages Configuration for Static Site
+
+# Disable Jekyll processing for static HTML site
+plugins: []
 
 # Build settings
 source: main branch
 destination: / (root)
-
-# Custom domain (optional)
-# custom_domain: yourdomain.com
-
-# Jekyll settings (for GitHub Pages)
-markdown: kramdown
-highlighter: rouge
-theme: minima
-
-# Exclude files from Jekyll processing
-exclude:
-  - README.md
-  - package.json
-  - add_project.py
-  - .gitignore
-  - node_modules/
-  - .git/
-
-# Include files
-include:
-  - _config.yml
-  - assets/
-  - index.html
-
-# Plugins
-plugins:
-  - jekyll-feed
-  - jekyll-sitemap
-  - jekyll-seo-tag
 
 # SEO settings
 title: Don Richardson Bayya - Portfolio
@@ -49,6 +23,3 @@ social:
 
 # Analytics (optional)
 # google_analytics: UA-XXXXXXXXX-X
-
-# Build command (for GitHub Actions if needed)
-# build_command: echo "No build needed for static site"
