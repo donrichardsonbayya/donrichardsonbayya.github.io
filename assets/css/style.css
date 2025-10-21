@@ -104,11 +104,11 @@ h1, h2, h3, h4, h5, h6 {
     transition: var(--transition);
 }
 
-.navbar-nav .nav-link:hover {
+/* .navbar-nav .nav-link:hover {
     color: var(--primary-color) !important;
     background: var(--glass-bg);
     backdrop-filter: blur(10px);
-}
+} */
 
 /* ===== Hero Section ===== */
 .hero-section {
@@ -330,12 +330,12 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--text-white);
 }
 
-.btn-glass:hover {
+/* .btn-glass:hover {
     background: var(--text-white);
     color: var(--text-dark);
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
-}
+} */
 
 .btn-outline-glass {
     background: transparent;
@@ -344,12 +344,12 @@ h1, h2, h3, h4, h5, h6 {
     backdrop-filter: blur(10px);
 }
 
-.btn-outline-glass:hover {
+/* .btn-outline-glass:hover {
     background: var(--text-white);
     color: var(--text-dark);
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
-}
+} */
 
 .hero-stats {
     display: flex;
@@ -443,6 +443,10 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 1rem;
 }
 
+.experience-highlight h4 {
+    margin-bottom: 0.5rem;
+}
+
 .experience-highlight .lead {
     font-size: 1.125rem;
     font-weight: 500;
@@ -493,7 +497,7 @@ h1, h2, h3, h4, h5, h6 {
     backdrop-filter: blur(10px);
 }
 
-.filter-btn:hover,
+/* .filter-btn:hover, */
 .filter-btn.active {
     background: var(--text-white);
     color: var(--text-dark);
@@ -512,10 +516,10 @@ h1, h2, h3, h4, h5, h6 {
     height: 100%;
 }
 
-.project-card:hover {
+/* .project-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-xl);
-}
+} */
 
 .project-image {
     position: relative;
@@ -550,9 +554,9 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 1;
 }
 
-.project-card:hover .project-image img {
+/* .project-card:hover .project-image img {
     transform: scale(1.1);
-}
+} */
 
 .project-links {
     display: flex;
@@ -631,10 +635,10 @@ h1, h2, h3, h4, h5, h6 {
     height: 100%;
 }
 
-.skill-category:hover {
+/* .skill-category:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-xl);
-}
+} */
 
 .skill-icon {
     width: 80px;
