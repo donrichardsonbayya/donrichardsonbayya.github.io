@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Don Richardson Bayya - Portfolio</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#home">Don Richardson Bayya</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-lg-8 mx-auto text-center">
+                    <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+                        <h1 class="hero-title mb-4">
+                            Hi, I'm <span class="text-gradient">Don Richardson Bayya</span>
+                        </h1>
+                        <h2 class="hero-subtitle mb-4">Data Engineer & Analytics Professional</h2>
+                        <p class="hero-description mb-5">
+                            Passionate about transforming data into actionable insights and building scalable analytics solutions
+                        </p>
+                        <div class="hero-buttons">
+                            <a href="#projects" class="btn btn-primary btn-lg me-3">
+                                <i class="fas fa-code me-2"></i>View My Work
+                            </a>
+                            <a href="#contact" class="btn btn-outline-light btn-lg">
+                                <i class="fas fa-envelope me-2"></i>Get In Touch
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <a href="#about" class="scroll-down">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center mb-5">
+                    <h2 class="section-title" data-aos="fade-up">About Me</h2>
+                    <div class="section-divider"></div>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="about-image">
+                        <img src="assets/images/profile.jpg" alt="Don Richardson Bayya" class="img-fluid rounded-circle shadow-lg">
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="about-content">
+                        <h3 class="mb-4">Professional Journey</h3>
+                        <div class="experience-highlight mb-4">
+                            <h4 class="text-primary">Celebal Technologies</h4>
+                            <p class="lead">
+                                During my tenure at Celebal Technologies, I spearheaded multiple high-impact data engineering and analytics initiatives that transformed how organizations leverage their data assets. I led the development of comprehensive ETL pipelines using Apache Airflow, implemented real-time data processing solutions with Apache Kafka, and designed scalable data warehouses that processed terabytes of information daily.
+                            </p>
+                            <p>
+                                My work encompassed building end-to-end analytics platforms that enabled data-driven decision making across various business units. I collaborated with cross-functional teams to deliver machine learning models for predictive analytics, created interactive dashboards using Power BI and Tableau, and established data governance frameworks that ensured data quality and compliance. These experiences honed my expertise in cloud technologies (AWS, Azure), big data tools (Spark, Hadoop), and modern analytics stacks, enabling me to deliver solutions that directly impacted business outcomes and operational efficiency.
+                            </p>
+                        </div>
+                        <div class="about-stats">
+                            <div class="row text-center">
+                                <div class="col-4">
+                                    <div class="stat-item">
+                                        <h4 class="text-primary">5+</h4>
+                                        <p>Years Experience</p>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="stat-item">
+                                        <h4 class="text-primary">50+</h4>
+                                        <p>Projects Completed</p>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="stat-item">
+                                        <h4 class="text-primary">10+</h4>
+                                        <p>Technologies</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center mb-5">
+                    <h2 class="section-title" data-aos="fade-up">My Projects</h2>
+                    <div class="section-divider"></div>
+                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">
+                        Explore my work across different domains
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Project Filter -->
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <div class="project-filter" data-aos="fade-up">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="engineering">Engineering</button>
+                        <button class="filter-btn" data-filter="analytics">Analytics</button>
+                        <button class="filter-btn" data-filter="data-science">Data Science</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="row" id="projects-grid">
+                <!-- Engineering Projects -->
+                <div class="col-lg-4 col-md-6 mb-4 project-item" data-category="engineering" data-aos="fade-up">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="assets/images/projects/peeringdb-pipeline.jpg" alt="PeeringDB Analytics Pipeline" class="img-fluid">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link" title="View Live">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="#" class="project-link" title="GitHub">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h4 class="project-title">PeeringDB Analytics Pipeline</h4>
+                            <p class="project-description">
+                                Comprehensive data pipeline for PeeringDB analytics using Apache Airflow, PostgreSQL, and dbt for data transformation and analysis.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Apache Airflow</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                                <span class="tech-tag">dbt</span>
+                                <span class="tech-tag">Docker</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4 project-item" data-category="engineering" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="assets/images/projects/etl-pipeline.jpg" alt="ETL Pipeline" class="img-fluid">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link" title="View Live">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="#" class="project-link" title="GitHub">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h4 class="project-title">Real-time ETL Pipeline</h4>
+                            <p class="project-description">
+                                High-performance ETL pipeline processing millions of records daily with Apache Kafka, Spark, and cloud storage solutions.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Apache Kafka</span>
+                                <span class="tech-tag">Apache Spark</span>
+                                <span class="tech-tag">AWS</span>
+                                <span class="tech-tag">Python</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Analytics Projects -->
+                <div class="col-lg-4 col-md-6 mb-4 project-item" data-category="analytics" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="assets/images/projects/dashboard.jpg" alt="Analytics Dashboard" class="img-fluid">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link" title="View Live">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="#" class="project-link" title="GitHub">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h4 class="project-title">Executive Analytics Dashboard</h4>
+                            <p class="project-description">
+                                Interactive Power BI dashboard providing real-time business insights with automated data refresh and advanced visualizations.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Power BI</span>
+                                <span class="tech-tag">SQL</span>
+                                <span class="tech-tag">DAX</span>
+                                <span class="tech-tag">Azure</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4 project-item" data-category="analytics" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="assets/images/projects/reporting.jpg" alt="Automated Reporting" class="img-fluid">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link" title="View Live">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="#" class="project-link" title="GitHub">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h4 class="project-title">Automated Reporting System</h4>
+                            <p class="project-description">
+                                Automated report generation system with scheduled delivery, custom templates, and multi-format output capabilities.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Jinja2</span>
+                                <span class="tech-tag">Pandas</span>
+                                <span class="tech-tag">Email</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Science Projects -->
+                <div class="col-lg-4 col-md-6 mb-4 project-item" data-category="data-science" data-aos="fade-up" data-aos-delay="400">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="assets/images/projects/ml-model.jpg" alt="ML Model" class="img-fluid">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link" title="View Live">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="#" class="project-link" title="GitHub">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h4 class="project-title">Predictive Analytics Model</h4>
+                            <p class="project-description">
+                                Machine learning model for customer churn prediction with 95% accuracy using ensemble methods and feature engineering.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Scikit-learn</span>
+                                <span class="tech-tag">Pandas</span>
+                                <span class="tech-tag">NumPy</span>
+                                <span class="tech-tag">Jupyter</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4 project-item" data-category="data-science" data-aos="fade-up" data-aos-delay="500">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="assets/images/projects/nlp.jpg" alt="NLP Project" class="img-fluid">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link" title="View Live">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="#" class="project-link" title="GitHub">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h4 class="project-title">NLP Sentiment Analysis</h4>
+                            <p class="project-description">
+                                Natural language processing system for sentiment analysis of customer feedback with real-time processing capabilities.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">NLTK</span>
+                                <span class="tech-tag">Transformers</span>
+                                <span class="tech-tag">TensorFlow</span>
+                                <span class="tech-tag">Flask</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center mb-5">
+                    <h2 class="section-title" data-aos="fade-up">Technical Skills</h2>
+                    <div class="section-divider"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
+                    <div class="skill-category">
+                        <div class="skill-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h4>Data Engineering</h4>
+                        <div class="skill-list">
+                            <span class="skill-item">Apache Airflow</span>
+                            <span class="skill-item">Apache Kafka</span>
+                            <span class="skill-item">Apache Spark</span>
+                            <span class="skill-item">PostgreSQL</span>
+                            <span class="skill-item">MongoDB</span>
+                            <span class="skill-item">Redis</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="skill-category">
+                        <div class="skill-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4>Analytics & BI</h4>
+                        <div class="skill-list">
+                            <span class="skill-item">Power BI</span>
+                            <span class="skill-item">Tableau</span>
+                            <span class="skill-item">dbt</span>
+                            <span class="skill-item">SQL</span>
+                            <span class="skill-item">DAX</span>
+                            <span class="skill-item">Excel</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="skill-category">
+                        <div class="skill-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h4>Data Science</h4>
+                        <div class="skill-list">
+                            <span class="skill-item">Python</span>
+                            <span class="skill-item">R</span>
+                            <span class="skill-item">Scikit-learn</span>
+                            <span class="skill-item">TensorFlow</span>
+                            <span class="skill-item">Pandas</span>
+                            <span class="skill-item">NumPy</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="skill-category">
+                        <div class="skill-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h4>Cloud Platforms</h4>
+                        <div class="skill-list">
+                            <span class="skill-item">AWS</span>
+                            <span class="skill-item">Azure</span>
+                            <span class="skill-item">GCP</span>
+                            <span class="skill-item">Docker</span>
+                            <span class="skill-item">Kubernetes</span>
+                            <span class="skill-item">Terraform</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="skill-category">
+                        <div class="skill-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h4>Programming</h4>
+                        <div class="skill-list">
+                            <span class="skill-item">Python</span>
+                            <span class="skill-item">SQL</span>
+                            <span class="skill-item">JavaScript</span>
+                            <span class="skill-item">Bash</span>
+                            <span class="skill-item">Git</span>
+                            <span class="skill-item">Linux</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="skill-category">
+                        <div class="skill-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h4>Tools & Frameworks</h4>
+                        <div class="skill-list">
+                            <span class="skill-item">Jupyter</span>
+                            <span class="skill-item">VS Code</span>
+                            <span class="skill-item">GitHub</span>
+                            <span class="skill-item">Jenkins</span>
+                            <span class="skill-item">Apache NiFi</span>
+                            <span class="skill-item">Elasticsearch</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center mb-5">
+                    <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
+                    <div class="section-divider"></div>
+                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">
+                        Let's discuss how we can work together
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="contact-form" data-aos="fade-up">
+                        <form id="contactForm">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" id="subject" placeholder="Subject" required>
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" id="message" rows="5" placeholder="Your Message" required></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary btn-lg">
+                                    <i class="fas fa-paper-plane me-2"></i>Send Message
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-lg-4 col-md-6 mb-4 text-center" data-aos="fade-up">
+                    <div class="contact-info">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h5>Email</h5>
+                        <p>donrichardsonbayya@gmail.com</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="contact-info">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <h5>LinkedIn</h5>
+                        <p>linkedin.com/in/donrichardsonbayya</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="contact-info">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <h5>GitHub</h5>
+                        <p>github.com/donrichardsonbayya</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2024 Don Richardson Bayya. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

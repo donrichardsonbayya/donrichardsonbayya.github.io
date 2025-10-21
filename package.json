@@ -1,0 +1,27 @@
+{
+  "name": "donrichardsonbayya-portfolio",
+  "version": "1.0.0",
+  "description": "Professional portfolio website for Don Richardson Bayya",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "build": "echo 'No build process needed for static site'",
+    "deploy": "git add . && git commit -m 'Update portfolio' && git push origin main"
+  },
+  "keywords": [
+    "portfolio",
+    "data-engineer",
+    "analytics",
+    "data-science",
+    "github-pages"
+  ],
+  "author": "Don Richardson Bayya",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/donrichardsonbayya/donrichardsonbayya.github.io.git"
+  },
+  "homepage": "https://donrichardsonbayya.github.io",
+  "dependencies": {},
+  "devDependencies": {}
+}
