@@ -52,25 +52,54 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero-section">
-        <div class="hero-overlay"></div>
+        <div class="hero-background">
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+                <div class="shape shape-4"></div>
+                <div class="shape shape-5"></div>
+            </div>
+            <div class="gradient-overlay"></div>
+        </div>
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-lg-8 mx-auto text-center">
                     <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
-                        <h1 class="hero-title mb-4">
+                        <div class="hero-badge" data-aos="fade-up" data-aos-delay="200">
+                            <i class="fas fa-code"></i>
+                            <span>Data Engineer</span>
+                        </div>
+                        <h1 class="hero-title mb-4" data-aos="fade-up" data-aos-delay="400">
                             Hi, I'm <span class="text-gradient">Don Richardson Bayya</span>
                         </h1>
-                        <h2 class="hero-subtitle mb-4">Data Engineer & Analytics Professional</h2>
-                        <p class="hero-description mb-5">
-                            Passionate about transforming data into actionable insights and building scalable analytics solutions
+                        <h2 class="hero-subtitle mb-4" data-aos="fade-up" data-aos-delay="600">
+                            <span class="typing-text">Data Engineer & Analytics Professional</span>
+                        </h2>
+                        <p class="hero-description mb-5" data-aos="fade-up" data-aos-delay="800">
+                            Passionate about transforming data into actionable insights and building scalable analytics solutions that drive business growth
                         </p>
-                        <div class="hero-buttons">
-                            <a href="#projects" class="btn btn-primary btn-lg me-3">
-                                <i class="fas fa-code me-2"></i>View My Work
+                        <div class="hero-buttons" data-aos="fade-up" data-aos-delay="1000">
+                            <a href="#projects" class="btn btn-glass btn-lg me-3">
+                                <i class="fas fa-rocket me-2"></i>Explore Projects
                             </a>
-                            <a href="#contact" class="btn btn-outline-light btn-lg">
-                                <i class="fas fa-envelope me-2"></i>Get In Touch
+                            <a href="#contact" class="btn btn-outline-glass btn-lg">
+                                <i class="fas fa-envelope me-2"></i>Let's Connect
                             </a>
+                        </div>
+                        <div class="hero-stats" data-aos="fade-up" data-aos-delay="1200">
+                            <div class="stat-item">
+                                <span class="stat-number">5+</span>
+                                <span class="stat-label">Years Experience</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">50+</span>
+                                <span class="stat-label">Projects</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">10+</span>
+                                <span class="stat-label">Technologies</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -78,7 +107,10 @@
         </div>
         <div class="scroll-indicator">
             <a href="#about" class="scroll-down">
-                <i class="fas fa-chevron-down"></i>
+                <div class="scroll-text">Scroll</div>
+                <div class="scroll-arrow">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
             </a>
         </div>
     </section>
