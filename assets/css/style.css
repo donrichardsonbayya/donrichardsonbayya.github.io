@@ -212,6 +212,55 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--text-light);
     opacity: 0.1;
     z-index: 1;
+    animation: subtle-float 20s ease-in-out infinite;
+}
+
+.section-svgs {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.section-svgs .svg-decoration {
+    animation: gentle-drift 25s ease-in-out infinite;
+}
+
+@keyframes subtle-float {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+        opacity: 0.1;
+    }
+    25% {
+        transform: translateY(-10px) rotate(1deg);
+        opacity: 0.08;
+    }
+    50% {
+        transform: translateY(-5px) rotate(0deg);
+        opacity: 0.12;
+    }
+    75% {
+        transform: translateY(-15px) rotate(-1deg);
+        opacity: 0.09;
+    }
+}
+
+@keyframes gentle-drift {
+    0%, 100% {
+        transform: translateX(0px) translateY(0px) rotate(0deg);
+        opacity: 0.04;
+    }
+    33% {
+        transform: translateX(5px) translateY(-8px) rotate(0.5deg);
+        opacity: 0.06;
+    }
+    66% {
+        transform: translateX(-3px) translateY(-12px) rotate(-0.5deg);
+        opacity: 0.05;
+    }
 }
 
 .hero-content {
@@ -900,6 +949,54 @@ h1, h2, h3, h4, h5, h6 {
 
 ::-webkit-scrollbar-thumb:hover {
     background: var(--text-white);
+}
+
+/* ===== Additional Professional SVG Enhancements ===== */
+.professional-svg-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        radial-gradient(circle at 80% 80%, rgba(192, 192, 192, 0.015) 1px, transparent 1px);
+    background-size: 50px 50px, 80px 80px;
+    animation: pattern-drift 30s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes pattern-drift {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+    100% {
+        transform: translateX(50px) translateY(50px);
+    }
+}
+
+/* ===== Sophisticated Hover Effects for SVGs ===== */
+.svg-decoration:hover {
+    opacity: 0.15;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+/* ===== Professional Grid Pattern ===== */
+.professional-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.01) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.01) 1px, transparent 1px);
+    background-size: 100px 100px;
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: 0;
 }
 
 /* ===== Additional Glassmorphism Effects ===== */
