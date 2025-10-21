@@ -587,7 +587,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.25rem;
     font-weight: 600;
     margin-bottom: 0.75rem;
-    color: var(--text-white);
+    color: var(--text-dark);
 }
 
 .project-description {
@@ -675,10 +675,10 @@ h1, h2, h3, h4, h5, h6 {
     transition: var(--transition);
 }
 
-.skill-item:hover {
+/* .skill-item:hover {
     background: var(--text-white);
     color: var(--text-dark);
-}
+} */
 
 /* ===== Contact Section ===== */
 #contact {
