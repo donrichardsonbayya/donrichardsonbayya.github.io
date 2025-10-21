@@ -10,13 +10,13 @@
     --text-dark: #0a0a0a;
     --text-light: #c0c0c0;
     --text-white: #ffffff;
-    --bg-black: #0a0a0a;
-    --bg-dark: #1a1a1a;
+    --bg-black: #1a1a1a;
+    --bg-dark: #2a2a2a;
     --bg-light: #2a2a2a;
     --bg-white: #ffffff;
     --gradient-primary: linear-gradient(135deg, #ffffff 0%, #c0c0c0 100%);
     --gradient-secondary: linear-gradient(135deg, #c0c0c0 0%, #ffffff 100%);
-    --gradient-dark: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    --gradient-dark: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
     --shadow-sm: 0 1px 2px 0 rgb(255 255 255 / 0.05);
     --shadow-md: 0 4px 6px -1px rgb(255 255 255 / 0.1), 0 2px 4px -2px rgb(255 255 255 / 0.1);
     --shadow-lg: 0 10px 15px -3px rgb(255 255 255 / 0.1), 0 4px 6px -4px rgb(255 255 255 / 0.1);
@@ -77,7 +77,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ===== Navigation ===== */
 .navbar {
-    background: rgba(10, 10, 10, 0.95);
+    background: rgba(26, 26, 26, 0.95);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--glass-border);
     transition: var(--transition);
@@ -85,7 +85,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar.scrolled {
-    background: rgba(10, 10, 10, 0.98);
+    background: rgba(26, 26, 26, 0.98);
     box-shadow: var(--shadow-md);
 }
 
