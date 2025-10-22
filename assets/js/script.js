@@ -1,5 +1,51 @@
 // ===== Modern Portfolio JavaScript =====
 
+document.addEventListener('DOMContentLoaded', () => {
+  if (window.AOS) AOS.init({ once: true, duration: 700, easing: 'ease-out' });
+  
+  // --- Rotating subtitle with gentle fade ---
+  const el = document.querySelector('.typing-text');
+  if (el) {
+    const phrases = [
+      'Data Engineer',
+      'Analytics Engineer',
+      'Real-time Analytics Builder'
+    ];
+    let i = 0;
+    const swap = () => {
+      // fade-out
+      el.style.opacity = '0';
+      setTimeout(() => {
+        i = (i + 1) % phrases.length;
+        el.textContent = phrases[i];
+        // fade-in
+        el.style.opacity = '1';
+      }, 250);
+    };
+    // start with visible, then rotate every 3s
+    el.style.opacity = '1';
+    setInterval(swap, 3000);
+  }
+  
+  // --- Ensure 'View Project' buttons open GitHub in new tab ---
+  document.querySelectorAll('.project-card').forEach(card => {
+    const overlayBtn = card.querySelector('.project-overlay .view-project-btn');
+    if (!overlayBtn) return;
+    // try to find an existing GitHub link within this card
+   let gh = card.querySelector('a[href*="github.com"]');
+    if (gh && gh.getAttribute('href') && gh.getAttribute('href') !== '#') {
+      overlayBtn.setAttribute('href', gh.getAttribute('href'));
+    } else {
+      // leave placeholder if no link found; developer will replace later
+      if (!overlayBtn.getAttribute('href') || overlayBtn.getAttribute('href') === '#') {
+        overlayBtn.setAttribute('href', 'https://github.com/donrichardsonbayya/REPO_NAME'); // TODO: replace
+      }
+    }
+    overlayBtn.setAttribute('target', '_blank');
+    overlayBtn.setAttribute('rel', 'noopener noreferrer');
+  });
+});
+
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize AOS (Animate On Scroll)
     AOS.init({
@@ -69,39 +115,31 @@ function initNavigation() {
 
 // ===== Project Filter Functions =====
 function initProjectFilter() {
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const projectItems = document.querySelectorAll('.project-item');
+    // --- Projects filter ---
+    (function(){
+      const grid = document.getElementById('projects-grid') || document.querySelector('#projects .row, #projects .projects-grid');
+      const items = grid ? [...grid.querySelectorAll('.project-item')] : [];
+      const buttons = [...document.querySelectorAll('.filter-btn')];
+      if (!grid || !items.length || !buttons.length) return;
 
-    filterButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const filter = this.getAttribute('data-filter');
-
-            // Update active button
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            this.classList.add('active');
-
-            // Filter projects with animation
-            projectItems.forEach((item, index) => {
-                const category = item.getAttribute('data-category');
-                
-                if (filter === 'all' || category === filter) {
-                    setTimeout(() => {
-                        item.style.display = 'block';
-                        item.classList.remove('hidden');
-                        item.style.opacity = '1';
-                        item.style.transform = 'translateY(0)';
-                    }, index * 100);
-                } else {
-                    item.style.opacity = '0';
-                    item.style.transform = 'translateY(20px)';
-                    setTimeout(() => {
-                        item.style.display = 'none';
-                        item.classList.add('hidden');
-                    }, 300);
-                }
-            });
+      const applyFilter = (key) => {
+        items.forEach(it => {
+          const show = key === 'all' || it.dataset.category === key;
+          it.style.display = show ? '' : 'none';
         });
-    });
+      };
+
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          buttons.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');          // active indicator = underline; text stays black via CSS
+          applyFilter(btn.dataset.filter);
+        });
+      });
+
+      // default: show all
+      applyFilter('all');
+    })();
 }
 
 // ===== Contact Form Functions =====
@@ -389,3 +427,26 @@ window.Portfolio = {
     initTypingEffect,
     initParallaxEffect
 };
+
+// --- NAVBAR LOGIC ---
+document.querySelectorAll('#navbarNav .nav-link').forEach(link => {
+  link.addEventListener('click', () => {
+    const nav = document.getElementById('navbarNav');
+    if (nav && nav.classList.contains('show')) {
+      new bootstrap.Collapse(nav).hide();
+    }
+  });
+});
+
+// Highlight active section in navbar
+const sections = [...document.querySelectorAll('section[id]')];
+window.addEventListener('scroll', () => {
+  const pos = window.scrollY + 120;
+  let current = sections.findLast(s => s.offsetTop <= pos);
+  document.querySelectorAll('.nav-link').forEach(l => {
+    const active = current && l.getAttribute('href') === `#${current.id}`;
+    l.classList.toggle('active', active);
+    if (active) l.setAttribute('aria-current', 'page');
+    else l.removeAttribute('aria-current');
+  });
+});

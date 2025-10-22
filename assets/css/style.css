@@ -1,6 +1,11 @@
 /* ===== PROFESSIONAL LIGHT PORTFOLIO CSS ===== */
 /* Modern Professional Design with Light Background */
 
+/* Offset sections so they don't hide behind the fixed navbar */
+section {
+  scroll-margin-top: 80px;
+}
+
 /* ===== CSS Variables ===== */
 :root {
     --primary-color: #2563eb;
@@ -10,9 +15,10 @@
     --text-dark: #1e293b;
     --text-light: #64748b;
     --text-white: #ffffff;
-    --bg-primary: #ffffff;
-    --bg-secondary: #f8fafc;
-    --bg-light: #f1f5f9;
+    /* Updated background colors with subtle tints */
+    --bg-primary: #f8fafc;
+    --bg-secondary: #f1f5f9;
+    --bg-light: #e2e8f0;
     --bg-dark: #0f172a;
     --gradient-primary: linear-gradient(135deg, #2563eb 0%, #0ea5e9 100%);
     --gradient-secondary: linear-gradient(135deg, #64748b 0%, #94a3b8 100%);
@@ -40,6 +46,14 @@ body {
     color: var(--text-dark);
     background-color: var(--bg-primary);
     overflow-x: hidden;
+    /* Enhanced background with more noticeable effects */
+    background-image: 
+        radial-gradient(circle at 20% 20%, rgba(37, 99, 235, 0.08) 0%, transparent 60%),
+        radial-gradient(circle at 80% 80%, rgba(14, 165, 233, 0.06) 0%, transparent 60%),
+        radial-gradient(circle at 50% 50%, rgba(100, 116, 139, 0.04) 0%, transparent 70%),
+        linear-gradient(135deg, rgba(248, 250, 252, 0.8) 0%, rgba(241, 245, 249, 0.9) 100%);
+    background-attachment: fixed;
+    background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%;
 }
 
 html {
@@ -407,7 +421,20 @@ h1, h2, h3, h4, h5, h6 {
 /* ===== About Section ===== */
 #about {
     background: var(--bg-primary);
-    padding: 5rem 0;
+    padding: 3rem 0;
+    position: relative;
+}
+
+#about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 10% 10%, rgba(37, 99, 235, 0.06) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
 }
 
 .about-image img {
@@ -450,12 +477,13 @@ h1, h2, h3, h4, h5, h6 {
 .experience-highlight .lead {
     font-size: 1.125rem;
     font-weight: 500;
-    color: var(--text-white);
+    color: var(--text-dark);
     margin-bottom: 1rem;
 }
 
 .experience-highlight p {
-    color: var(--text-light);
+    color: var(--text-dark);
+    font-weight: 500;
 }
 
 .about-stats {
@@ -477,7 +505,20 @@ h1, h2, h3, h4, h5, h6 {
 /* ===== Projects Section ===== */
 #projects {
     background: var(--bg-secondary);
-    padding: 5rem 0;
+    padding: 3rem 0;
+    position: relative;
+}
+
+#projects::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 90% 20%, rgba(14, 165, 233, 0.06) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
 }
 
 .project-filter {
@@ -620,7 +661,7 @@ h1, h2, h3, h4, h5, h6 {
 /* ===== Skills Section ===== */
 #skills {
     background: var(--bg-primary);
-    padding: 5rem 0;
+    padding: 3rem 0;
 }
 
 .skill-category {
@@ -687,7 +728,7 @@ h1, h2, h3, h4, h5, h6 {
 /* ===== Contact Section ===== */
 #contact {
     background: var(--bg-secondary);
-    padding: 5rem 0;
+    padding: 3rem 0;
 }
 
 .contact-form {
@@ -1230,4 +1271,252 @@ h1, h2, h3, h4, h5, h6 {
     border-color: var(--text-white);
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
+}
+
+/* --- Step 3: Hero/Buttons/Stats tweaks --- */
+/* Make hero CTA buttons black text */
+.hero-buttons .btn { 
+  color: #000 !important;
+}
+.hero-buttons .btn i {
+  color: inherit !important;
+}
+/* Bold + black for stat numbers in Hero and About */
+.hero-stats .stat-number,
+.about-stats .stat-item h4 {
+  color: #000 !important;
+  font-weight: 800 !important;
+}
+
+/* --- Step 4: Hero improvements --- */
+/* (1) Fade for rotating subtitle */
+.typing-text {
+  transition: opacity 0.35s ease-in-out;
+}
+
+/* (2) Mobile spacing & CTA stacking */
+@media (max-width: 576px) {
+  .hero-title, .hero h1, .hero .display-4 {
+    font-size: 1.9rem !important;
+    line-height: 1.2 !important;
+  }
+  .hero-buttons {
+    display: grid;
+    gap: 12px;
+  }
+  .hero-buttons .btn {
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+  }
+}
+
+/* (3) Tone down decorative SVGs on small screens */
+.section-svgs .svg-decoration { opacity: 0.05; }
+@media (max-width: 576px) {
+  .section-svgs .svg-decoration { display: none; }
+}
+
+/* (5) Trust bar styling */
+.trust-bar { opacity: 0.9; }
+.trust-list {
+  list-style: none;
+  padding: 0; margin: 0;
+  display: flex; gap: 16px; flex-wrap: wrap;
+  align-items: center; justify-content: center;
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.7);
+}
+.trust-list i { margin-right: 6px; opacity: 0.85; }
+
+/* (6) CTA hover clarity while keeping black text */
+.hero-buttons .btn {
+  color: #000 !important;              /* keep black text */
+}
+.hero-buttons .btn:hover,
+.hero-buttons .btn:focus-visible {
+  background: rgba(255,255,255,0.85) !important;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15) !important;
+  transform: translateY(-1px);
+}
+
+/* (already from Step 3) Bold + black for hero/about stats */
+.hero-stats .stat-number,
+.about-stats .stat-item h4 {
+  color: #000 !important;
+  font-weight: 800 !important;
+}
+
+/* --- Step 5: Projects grid, filters, hover --- */
+/* Keep filter text black always; indicate active with an underline/border */
+.filter-btn {
+  color: #000 !important;
+  background: transparent;
+  border: none;
+  padding: 8px 14px;
+  margin: 0 4px;
+  border-bottom: 2px solid transparent;
+  font-weight: 600;
+}
+.filter-btn.active {
+  border-bottom-color: #000;
+}
+
+/* Project image hover overlay */
+.project-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+.project-image img {
+  display: block;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.45);
+  opacity: 0;
+  transition: opacity 0.25s ease-in-out;
+}
+.project-image:hover img { transform: scale(1.04); opacity: 0.8; }
+.project-image:hover .project-overlay { opacity: 1; }
+
+/* View Project button */
+.view-project-btn {
+  font-weight: 700;
+}
+
+/* Make stat-number link inherit existing bold/black from earlier steps */
+.stat-link { text-decoration: none; }
+.stat-link:hover .stat-number { text-decoration: underline; }
+
+/* --- Step 6: Projects polish --- */
+/* Card lift effect on hover */
+.project-card {
+  background: rgba(255,255,255,0.02);
+  border-radius: 14px;
+  padding: 14px;
+  transition: transform 0.2s ease, box-shadow 0.25s ease;
+}
+.project-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+}
+
+/* Tech tags tightening */
+.project-tech { margin-top: 10px; }
+.tech-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.06);
+  margin: 3px 6px 0 0;
+  white-space: nowrap;
+  color: #000;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+.tech-tag i { opacity: 0.85; }
+.tech-tag:hover {
+  background: rgba(255,255,255,0.15);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Step 8: Skills layout */
+.skill-card {
+  background: rgba(255,255,255,0.02);
+  border-radius: 14px;
+  padding: 16px 18px;
+  height: 100%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.skill-card h5 { margin-bottom: 10px; font-weight: 700; }
+.skill-list { margin: 0; padding-left: 18px; }
+.skill-list li { margin-bottom: 6px; }
+
+/* Step: Hero layout + typography fix */
+.hero .container, .hero .row { overflow: visible; }
+.hero-title, .hero h1, .hero .display-4 {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.hero-description {
+  max-width: 900px;
+  margin-inline: auto;
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+}
+.hero-buttons .btn {
+  color: #000 !important;        /* keep black text */
+  padding: 10px 16px;
+  white-space: nowrap;
+}
+/* Mobile: stack buttons full width, no clipping */
+@media (max-width: 576px) {
+  .hero-title, .hero h1, .hero .display-4 {
+    font-size: 1.85rem !important;
+    line-height: 1.15 !important;
+  }
+  .hero-description { font-size: 0.98rem; }
+  .hero-buttons { justify-content: stretch; }
+  .hero-buttons .btn { width: 100%; justify-content: center; }
+}
+
+/* Step: Skill chips & gradients */
+/* reuse .tech-tag from projects; add hover */
+.skill-chips .tech-tag,
+.project-tech .tech-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.08);
+  margin: 4px 6px 0 0;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+.skill-chips .tech-tag:hover,
+.project-tech .tech-tag:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+  background: rgba(255,255,255,0.15);
+}
+/* Gradient titles (subtle, accessible) */
+.project-title,
+.skill-card h5 {
+  background: linear-gradient(90deg, #0b0f19 0%, #243b55 50%, #0b0f19 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+/* Gentle blue palette for accents (buttons, dividers) */
+.section-divider {
+  background: linear-gradient(90deg, rgba(36,59,85,0.7), rgba(11,15,25,0));
+}
+/* Safari font rendering + safe fallbacks */
+html { -webkit-text-size-adjust: 100%; }
+body { -webkit-font-smoothing: antialiased; }
+/* Avoid vh issues on iOS Safari */
+.hero { min-height: min(100vh, 100dvh); }
+/* Fallback if Safari glitches with flex gap: ensure spacing still ok */
+@supports not (gap: 12px) {
+  .hero-buttons .btn { margin: 6px; }
+  .skill-chips .tech-tag { margin: 4px 6px; }
 }
