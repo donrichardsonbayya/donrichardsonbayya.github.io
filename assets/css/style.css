@@ -96,6 +96,11 @@ h1, h2, h3, h4, h5, h6 {
     border-bottom: 1px solid var(--glass-border);
     transition: var(--transition);
     padding: 1rem 0;
+    /* Remove fixed positioning - navbar will scroll with page */
+    position: relative;
+    top: auto;
+    width: auto;
+    z-index: auto;
 }
 
 .navbar.scrolled {
@@ -171,6 +176,17 @@ h1, h2, h3, h4, h5, h6 {
     .navbar-toggler:focus {
         box-shadow: none;
     }
+    
+    /* Fix hero section spacing for Chrome */
+    .hero-section {
+        padding-top: 100px !important;
+        margin-top: 0 !important;
+    }
+    
+    .hero-content {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
 }
 
 /* ===== Hero Section ===== */
@@ -182,6 +198,7 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    /* No padding needed since navbar is not fixed */
 }
 
 .hero-background {
