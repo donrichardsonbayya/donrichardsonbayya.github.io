@@ -1542,12 +1542,15 @@ body { -webkit-font-smoothing: antialiased; }
 
 /* Title & description sizing: crisp, not oversized */
 .hero-title {
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   letter-spacing: -0.02em;
+}
+.hero-subtitle {
+  margin-bottom: 8px;
 }
 .hero-description {
   max-width: 900px;
-  margin: 10px auto 16px auto;
+  margin: 8px auto 12px auto;
   font-size: clamp(0.98rem, 1.05vw + 0.6rem, 1.12rem);
   line-height: 1.5;
 }
@@ -1559,7 +1562,7 @@ body { -webkit-font-smoothing: antialiased; }
   gap: 10px;
   align-items: center;
   justify-content: center;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 .hero-buttons .btn {
   color: #000 !important;     /* keep black text as requested */
