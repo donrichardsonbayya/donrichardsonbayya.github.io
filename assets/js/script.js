@@ -444,9 +444,23 @@ window.addEventListener('scroll', () => {
   const pos = window.scrollY + 120;
   let current = sections.findLast(s => s.offsetTop <= pos);
   document.querySelectorAll('.nav-link').forEach(l => {
-    const active = current && l.getAttribute('href') === `#${current.id}`;
+    const active = current && l.getAttribute('href') === `#${current.id}`;      
     l.classList.toggle('active', active);
     if (active) l.setAttribute('aria-current', 'page');
     else l.removeAttribute('aria-current');
   });
 });
+
+// ===== Measure the real navbar height on load + resize, apply globally =====
+(function() {
+  function setNavHeightVar() {
+    const nav = document.querySelector('.navbar');
+    if (!nav) return;
+    const h = Math.round(nav.getBoundingClientRect().height);
+    document.documentElement.style.setProperty('--nav-h', h + 'px');
+  }
+  window.addEventListener('load', setNavHeightVar);
+  window.addEventListener('resize', setNavHeightVar);
+  // If fonts/icons load late and change height, re-measure after a tick
+  document.addEventListener('DOMContentLoaded', () => setTimeout(setNavHeightVar, 200));
+})();

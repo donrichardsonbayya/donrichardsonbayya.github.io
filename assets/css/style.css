@@ -1608,3 +1608,48 @@ body { -webkit-font-smoothing: antialiased; }
 
 /* If badge or buttons overlap nav due to rare viewport quirks */
 .navbar-fixed-top + .hero, .navbar.fixed-top + .hero { padding-top: 96px; }
+
+/* ===== GLOBAL TOP SPACING: works on Desktop + iOS + Android ===== */
+:root { --nav-h: 72px; } /* default; JS will overwrite with real height */
+
+/* iOS safe-area support (new + legacy) */
+@supports (padding: max(0px)) {
+  :root {
+    --safe-top: max(env(safe-area-inset-top), constant(safe-area-inset-top));
+  }
+}
+@supports not (padding: max(0px)) {
+  :root { --safe-top: 0px; }
+}
+
+html, body { height: 100%; }
+
+/* Put the whole page below the fixed navbar + notch, precisely */
+body {
+  padding-top: calc(var(--nav-h) + var(--safe-top));
+}
+
+/* Make anchors (About/Projects/Skills/Contact) not hide under nav */
+section { scroll-margin-top: calc(var(--nav-h) + 12px); }
+
+/* Navbar gets safe top padding on notched devices (no effect on desktop) */
+.navbar, .navbar.fixed-top {
+  padding-top: calc(8px + var(--safe-top));
+  -webkit-backdrop-filter: saturate(120%) blur(8px);
+  backdrop-filter: saturate(120%) blur(8px);
+}
+
+/* Keep hero content above decorations; let height be natural (prevents crop) */
+.hero, .hero .container, .hero .hero-content { position: relative; z-index: 2; }
+.hero { padding-top: 16px; padding-bottom: 40px; min-height: auto; }
+
+/* Mobile refinements (Android + iOS) */
+@media (max-width: 576px) {
+  .hero-title { font-size: 1.7rem !important; line-height: 1.15 !important; margin-bottom: 8px; }
+  .hero-subtitle { margin-bottom: 6px; }
+  .hero-description { font-size: 0.96rem; line-height: 1.45; margin: 8px auto 12px; }
+  .hero-buttons { display: flex; flex-wrap: wrap; gap: 8px; justify-content: stretch; }
+  .hero-buttons .btn { width: 100%; justify-content: center; }
+  /* reduce decoration noise on small screens */
+  .hero .svg-decoration { display: none !important; }
+}
