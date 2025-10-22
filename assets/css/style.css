@@ -179,26 +179,34 @@ h1, h2, h3, h4, h5, h6 {
     
     /* Fix hero section spacing for Chrome */
     .hero-section {
-        padding-top: 100px !important;
+        min-height: 100vh !important;
+        padding: 2rem 0 !important;
         margin-top: 0 !important;
+        overflow: visible !important;
     }
     
     .hero-content {
         margin-top: 0 !important;
         padding-top: 0 !important;
+        padding-bottom: 2rem !important;
+    }
+    
+    .trust-bar {
+        margin-bottom: 2rem !important;
     }
 }
 
 /* ===== Hero Section ===== */
 .hero-section {
-    height: 100vh;
+    min-height: 100vh;
     background: var(--bg-secondary);
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
-    /* No padding needed since navbar is not fixed */
+    overflow: visible;
+    padding: 2rem 0;
+    /* Allow content to expand beyond viewport height */
 }
 
 .hero-background {
@@ -1639,6 +1647,7 @@ body { -webkit-font-smoothing: antialiased; }
 /* Trust bar: smaller, guaranteed visible */
 .trust-bar {
   margin-top: 8px;
+  margin-bottom: 2rem; /* Add bottom margin to ensure visibility */
 }
 .trust-list { 
   gap: 10px;
