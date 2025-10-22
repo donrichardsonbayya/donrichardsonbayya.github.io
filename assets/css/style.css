@@ -391,32 +391,6 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 500;
 }
 
-.scroll-indicator {
-    position: absolute;
-    bottom: 2rem;
-    right: 2rem;
-    z-index: 2;
-}
-
-.scroll-down {
-    display: inline-block;
-    color: var(--text-dark);
-    font-size: 1.5rem;
-    animation: bounce 2s infinite;
-    text-decoration: none;
-}
-
-.scroll-text {
-    color: var(--text-dark);
-    font-size: 0.875rem;
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-}
-
-.scroll-arrow {
-    color: var(--text-dark);
-    font-size: 1.2rem;
-}
 
 @keyframes bounce {
     0%, 20%, 50%, 80%, 100% {
@@ -461,7 +435,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .about-content h3 {
-    color: var(--text-white);
+    color: var(--text-dark);
     font-size: 2rem;
     margin-bottom: 1.5rem;
 }
@@ -987,11 +961,6 @@ h1, h2, h3, h4, h5, h6 {
     #about, #projects, #skills, #contact {
         padding: 2rem 0;
     }
-    
-    .scroll-indicator {
-        bottom: 1rem;
-        right: 1rem;
-    }
 }
 
 @media (max-width: 576px) {
@@ -1484,14 +1453,15 @@ h1, h2, h3, h4, h5, h6 {
 .hero-buttons {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 8px;
   align-items: center;
   justify-content: center;
 }
 .hero-buttons .btn {
   color: #000 !important;        /* keep black text */
-  padding: 10px 16px;
+  padding: 8px 12px;
   white-space: nowrap;
+  font-size: 0.9rem;
 }
 /* Mobile: stack buttons full width, no clipping */
 @media (max-width: 576px) {
