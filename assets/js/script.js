@@ -71,12 +71,38 @@ function initNavigation() {
     const navbar = document.getElementById('mainNav');
     const navLinks = document.querySelectorAll('.nav-link');
 
+    // Chrome/Webkit specific navbar fixes
+    if (navigator.userAgent.indexOf('Chrome') > -1 || navigator.userAgent.indexOf('Safari') > -1) {
+        // Ensure navbar is properly positioned
+        navbar.style.position = 'fixed';
+        navbar.style.top = '0';
+        navbar.style.width = '100%';
+        navbar.style.zIndex = '1000';
+        
+        // Fix backdrop filter for Chrome
+        navbar.style.backdropFilter = 'blur(10px)';
+        navbar.style.webkitBackdropFilter = 'blur(10px)';
+        
+        // Ensure proper background
+        navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+    }
+
     // Navbar scroll effect with glassmorphism
     window.addEventListener('scroll', function() {
         if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
+            // Chrome-specific scrolled state
+            if (navigator.userAgent.indexOf('Chrome') > -1) {
+                navbar.style.backgroundColor = 'rgba(255, 255, 255, 1)';
+                navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            }
         } else {
             navbar.classList.remove('scrolled');
+            // Chrome-specific normal state
+            if (navigator.userAgent.indexOf('Chrome') > -1) {
+                navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+                navbar.style.boxShadow = 'none';
+            }
         }
     });
 
