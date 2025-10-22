@@ -1673,14 +1673,14 @@ section { scroll-margin-top: calc(var(--nav-h) + 12px); }
     margin-bottom: 4px;
   }
   
-  /* Reduce mobile padding to prevent cramping */
+  /* Remove problematic mobile padding - let content flow naturally */
   body {
-    padding-top: calc(var(--nav-h) + var(--safe-top) - 4px);
+    padding-top: calc(var(--nav-h) + var(--safe-top));
   }
   
   .hero {
-    padding-top: 4px;
-    padding-bottom: 24px;
+    padding-top: 12px;
+    padding-bottom: 32px;
   }
 }
 
