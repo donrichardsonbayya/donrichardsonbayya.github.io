@@ -1538,6 +1538,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 /* Mobile: stack buttons full width, no clipping */
 @media (max-width: 576px) {
+  .hero-section {
+    min-height: calc(100vh + 120px) !important;
+    padding: 60px 0 50px 0 !important;
+  }
   .hero-title, .hero h1, .hero .display-4 {
     font-size: 1.85rem !important;
     line-height: 1.15 !important;
@@ -1653,11 +1657,22 @@ body { -webkit-font-smoothing: antialiased; }
   opacity: 0.9;
 }
 
+/* Mobile trust bar spacing */
+@media (max-width: 576px) {
+  .trust-bar {
+    margin: 15px 0 30px 0; /* Slightly smaller margins on mobile */
+  }
+}
+
 /* Reduce decorative load globally on small screens */
 @media (max-width: 576px) {
+  .hero-section { 
+    min-height: calc(100vh + 120px) !important;
+    padding: 60px 0 50px 0 !important;
+  }
   .hero { 
-    padding-top: 78px; 
-    padding-bottom: 42px;
+    padding-top: 60px; 
+    padding-bottom: 50px;
   }
   .hero-title { 
     font-size: 1.8rem !important; 
@@ -1718,6 +1733,10 @@ section { scroll-margin-top: calc(var(--nav-h) + 12px); }
 
 /* Mobile refinements (Android + iOS) */
 @media (max-width: 576px) {
+  .hero-section {
+    min-height: calc(100vh + 120px) !important;
+    padding: 60px 0 50px 0 !important;
+  }
   .hero-title { font-size: 1.7rem !important; line-height: 1.15 !important; margin-bottom: 8px; }
   .hero-subtitle { margin-bottom: 6px; }
   .hero-description { font-size: 0.96rem; line-height: 1.45; margin: 8px auto 12px; }
