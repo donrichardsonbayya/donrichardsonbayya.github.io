@@ -294,7 +294,7 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0.75rem 1.5rem;
     border-radius: 50px;
     margin-bottom: 2rem;
-    color: var(--text-white);
+    color: var(--text-dark);
     font-weight: 500;
 }
 
@@ -321,12 +321,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-description {
-    font-size: 1.125rem;
+    font-size: 1rem;
     margin-bottom: 2rem;
     color: var(--text-light);
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+    line-height: 1.5;
 }
 
 .hero-buttons .btn {
@@ -380,7 +381,7 @@ h1, h2, h3, h4, h5, h6 {
     display: block;
     font-size: 2rem;
     font-weight: 700;
-    color: var(--text-white);
+    color: var(--text-dark);
     margin-bottom: 0.5rem;
 }
 
@@ -393,14 +394,13 @@ h1, h2, h3, h4, h5, h6 {
 .scroll-indicator {
     position: absolute;
     bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
+    right: 2rem;
     z-index: 2;
 }
 
 .scroll-down {
     display: inline-block;
-    color: var(--text-white);
+    color: var(--text-dark);
     font-size: 1.5rem;
     animation: bounce 2s infinite;
     text-decoration: none;
@@ -421,7 +421,7 @@ h1, h2, h3, h4, h5, h6 {
 /* ===== About Section ===== */
 #about {
     background: var(--bg-primary);
-    padding: 3rem 0;
+    padding: 2.5rem 0;
     position: relative;
 }
 
@@ -475,15 +475,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .experience-highlight .lead {
-    font-size: 1.125rem;
+    font-size: 1rem;
     font-weight: 500;
     color: var(--text-dark);
     margin-bottom: 1rem;
+    line-height: 1.5;
 }
 
 .experience-highlight p {
     color: var(--text-dark);
     font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.5;
 }
 
 .about-stats {
@@ -494,7 +497,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
-    color: var(--text-white);
+    color: var(--text-dark);
 }
 
 .stat-item p {
@@ -505,7 +508,7 @@ h1, h2, h3, h4, h5, h6 {
 /* ===== Projects Section ===== */
 #projects {
     background: var(--bg-secondary);
-    padding: 3rem 0;
+    padding: 2.5rem 0;
     position: relative;
 }
 
@@ -661,7 +664,7 @@ h1, h2, h3, h4, h5, h6 {
 /* ===== Skills Section ===== */
 #skills {
     background: var(--bg-primary);
-    padding: 3rem 0;
+    padding: 2.5rem 0;
 }
 
 .skill-category {
@@ -728,7 +731,7 @@ h1, h2, h3, h4, h5, h6 {
 /* ===== Contact Section ===== */
 #contact {
     background: var(--bg-secondary);
-    padding: 3rem 0;
+    padding: 2.5rem 0;
 }
 
 .contact-form {
@@ -797,7 +800,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.125rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
-    color: var(--text-white);
+    color: var(--text-dark);
 }
 
 .contact-info p {
@@ -878,6 +881,11 @@ h1, h2, h3, h4, h5, h6 {
     
     .hero-subtitle {
         font-size: 1.25rem;
+    }
+    
+    .hero-description {
+        font-size: 0.95rem;
+        line-height: 1.4;
     }
     
     .section-title {
@@ -965,6 +973,16 @@ h1, h2, h3, h4, h5, h6 {
     .svg-decoration[style*="width: 50px"] {
         width: 25px !important;
         height: 25px !important;
+    }
+    
+    /* Mobile spacing adjustments */
+    #about, #projects, #skills, #contact {
+        padding: 2rem 0;
+    }
+    
+    .scroll-indicator {
+        bottom: 1rem;
+        right: 1rem;
     }
 }
 
