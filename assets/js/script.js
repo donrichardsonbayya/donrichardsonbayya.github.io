@@ -464,3 +464,16 @@ window.addEventListener('scroll', () => {
   // If fonts/icons load late and change height, re-measure after a tick
   document.addEventListener('DOMContentLoaded', () => setTimeout(setNavHeightVar, 200));
 })();
+
+// ===== Measure the real navbar height and apply it globally =====
+(function () {
+  function setNavHeightVar() {
+    const nav = document.querySelector('.navbar');
+    if (!nav) return;
+    const h = Math.round(nav.getBoundingClientRect().height);
+    document.documentElement.style.setProperty('--nav-h', h + 'px');
+  }
+  window.addEventListener('load', setNavHeightVar);
+  window.addEventListener('resize', setNavHeightVar);
+  document.addEventListener('DOMContentLoaded', () => setTimeout(setNavHeightVar, 150));
+})();

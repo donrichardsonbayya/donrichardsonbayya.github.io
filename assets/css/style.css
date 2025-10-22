@@ -1734,3 +1734,49 @@ section { scroll-margin-top: calc(var(--nav-h) + 12px); }
     min-height: calc(100vh - var(--nav-h, 72px) - var(--safe-top, 0px));
   }
 }
+
+/* ===== Global top offset & hero sizing (cross-browser) ===== */
+:root { --nav-h: 72px; } /* default; JS will set real value */
+
+/* iOS safe area (new + legacy) */
+@supports (padding: max(0px)) {
+  :root { --safe-top: max(env(safe-area-inset-top), constant(safe-area-inset-top)); }
+}
+@supports not (padding: max(0px)) {
+  :root { --safe-top: 0px; }
+}
+
+html, body { height: 100%; }
+
+/* Put page content below fixed navbar + notch, precisely */
+body { padding-top: calc(var(--nav-h) + var(--safe-top)); }
+
+/* Don't let anchor targets hide under the navbar */
+section { scroll-margin-top: calc(var(--nav-h) + 12px); }
+
+/* Keep hero visible and not cropped on mobile address-bar changes */
+.hero, .hero .container, .hero .hero-content { position: relative; z-index: 2; }
+
+/* Use new mobile viewport units to avoid cut-off on Safari/Chrome */
+.hero {
+  /* 100svh/100dvh account for collapsing/expanding URL bars */
+  min-height: calc(min(100svh, 100dvh) - var(--nav-h) - var(--safe-top));
+  padding-top: 16px;   /* content breathing room */
+  padding-bottom: 40px;
+}
+
+/* Optional: if your navbar element needs safe padding on notched iPhones */
+.navbar, .navbar.fixed-top {
+  padding-top: calc(8px + var(--safe-top));
+  -webkit-backdrop-filter: saturate(120%) blur(8px);
+  backdrop-filter: saturate(120%) blur(8px);
+}
+
+/* Small screens: tighten a bit more so everything fits without pinch */
+@media (max-width: 576px) {
+  .hero-title { font-size: 1.7rem !important; line-height: 1.15 !important; margin-bottom: 8px; }
+  .hero-subtitle { margin-bottom: 6px; }
+  .hero-description { font-size: 0.96rem; line-height: 1.45; margin: 8px auto 12px; }
+  .hero-buttons { display: flex; flex-wrap: wrap; gap: 8px; justify-content: stretch; }
+  .hero-buttons .btn { width: 100%; justify-content: center; }
+}
