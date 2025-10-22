@@ -1516,3 +1516,92 @@ body { -webkit-font-smoothing: antialiased; }
   .hero-buttons .btn { margin: 6px; }
   .skill-chips .tech-tag { margin: 4px 6px; }
 }
+
+/* --- Hero visibility & spacing pass --- */
+/* Keep content above decorative SVGs */
+.hero, .hero .container, .hero .hero-content { position: relative; z-index: 2; }
+.section-svgs, .hero .svg-decoration { z-index: 1; }
+
+/* Tighter vertical rhythm; account for fixed navbar (≈72px) */
+.hero {
+  padding-top: 88px;   /* navbar clearance + headline */
+  padding-bottom: 56px;
+  min-height: auto;    /* let content define height; avoid clipping */
+}
+
+/* Badge visible & compact */
+.hero-badge {
+  display: inline-block;
+  font-weight: 700;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.14);
+  backdrop-filter: blur(3px);
+  margin-bottom: 10px;
+}
+
+/* Title & description sizing: crisp, not oversized */
+.hero-title {
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+.hero-description {
+  max-width: 900px;
+  margin: 10px auto 16px auto;
+  font-size: clamp(0.98rem, 1.05vw + 0.6rem, 1.12rem);
+  line-height: 1.5;
+}
+
+/* Buttons: on one line when space allows, wrap gracefully otherwise */
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.hero-buttons .btn {
+  color: #000 !important;     /* keep black text as requested */
+  padding: 10px 14px;
+  white-space: nowrap;
+}
+
+/* Trust bar: smaller, guaranteed visible */
+.trust-bar {
+  margin-top: 8px;
+}
+.trust-list { 
+  gap: 10px;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* Reduce decorative load globally on small screens */
+@media (max-width: 576px) {
+  .hero { 
+    padding-top: 78px; 
+    padding-bottom: 42px;
+  }
+  .hero-title { 
+    font-size: 1.8rem !important; 
+    line-height: 1.15 !important; 
+  }
+  .hero-description { 
+    font-size: 0.98rem; 
+    margin-bottom: 12px; 
+  }
+  .hero-buttons { 
+    gap: 8px; 
+    justify-content: stretch; 
+  }
+  .hero-buttons .btn { 
+    width: 100%; 
+    justify-content: center; 
+  }
+  /* Hide one more decorative layer if still crowded */
+  .hero .svg-decoration:nth-of-type(n+2) { display: none; }
+}
+
+/* If badge or buttons overlap nav due to rare viewport quirks */
+.navbar-fixed-top + .hero, .navbar.fixed-top + .hero { padding-top: 96px; }
