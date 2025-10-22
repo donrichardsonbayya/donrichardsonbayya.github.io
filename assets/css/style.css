@@ -1683,3 +1683,54 @@ section { scroll-margin-top: calc(var(--nav-h) + 12px); }
     padding-bottom: 24px;
   }
 }
+
+/* ===== Chrome/Safari specific fixes ===== */
+/* Fix clamp() rendering differences */
+@supports (font-size: clamp(1rem, 1vw, 2rem)) {
+  .hero-description {
+    font-size: clamp(0.98rem, 1.05vw + 0.6rem, 1.12rem);
+  }
+}
+
+/* Fallback for browsers that don't support clamp() well */
+@supports not (font-size: clamp(1rem, 1vw, 2rem)) {
+  .hero-description {
+    font-size: 1rem;
+  }
+  @media (min-width: 768px) {
+    .hero-description {
+      font-size: 1.05rem;
+    }
+  }
+  @media (min-width: 1200px) {
+    .hero-description {
+      font-size: 1.12rem;
+    }
+  }
+}
+
+/* Chrome/Safari font rendering fixes */
+.hero-title,
+.hero-subtitle,
+.typing-text {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Fix CSS custom property parsing in Chrome/Safari */
+@supports (--css: variables) {
+  body {
+    padding-top: calc(var(--nav-h, 72px) + var(--safe-top, 0px) - 4px);
+  }
+  section {
+    scroll-margin-top: calc(var(--nav-h, 72px) + 12px);
+  }
+}
+
+/* Chrome/Safari viewport fixes */
+@supports (height: 100vh) {
+  .hero {
+    min-height: calc(100vh - var(--nav-h, 72px) - var(--safe-top, 0px));
+  }
+}
