@@ -21,7 +21,7 @@
     "type": "git",
     "url": "https://github.com/donrichardsonbayya/donrichardsonbayya.github.io.git"
   },
-  "homepage": "https://donrichardsonbayya.github.io",
+  "homepage": "https://YOUR_AZURE_STATIC_WEB_APP_URL",
   "dependencies": {},
   "devDependencies": {}
 }
